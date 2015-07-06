@@ -1,0 +1,542 @@
+# Chapter 3: <small>Functions</small>
+
+Welcome to *Eloquent JavaScript*, Chapter 3!
+
+These are the instructions for the exercises in Chapter 3. Render them in
+Mardown for maximum readablility. Remember that all your work will be done in
+the `./exercises.js` file, and you can check your work by running
+
+    $ ywca test chapter03 --color | less
+
+from your `ywebca` directory. When all your tests are green, run
+
+    $ ywca test chapter03 > check.txt
+
+and attach `check.txt` to the appropriate card on Trello.
+
+### End of Chapter Exercises
+
+* [Minimum](#minimum)
+* [Recursion](#recrusion-exercise)
+* [Bean Counting](#bean-counting)
+
+<br / >
+
+* * *
+
+<br / >
+
+## Defining a Function
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_pZXHY2QZfp).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Defining 1</th>
+      <td>
+        Use a function expression to define a function named <code>three</code>.
+        That function should return the value <code>3</code>.
+      </td>
+    </tr>
+    <tr>
+      <th>Defining 2</th>
+      <td>
+        <p>
+          Use a function expression to define a function named
+          <code>myLog</code>. <code>myLog</code> should accept one parameter
+          named <code>message</code>. <code>myLog</code> should output to the
+          console...
+        </p>
+        <pre>The Log Says: {message}</pre>
+        <p>
+          ...where <code>{message}</code> is the value of the parameter
+          <code>message</code>. Do not include the braces in your output.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th>Defining 3</th>
+      <td>
+        Use a function expression to define a function named
+        <code>square</code>. <code>square</code> should accept one parameter
+        named <code>number</code>. The function should square
+        <code>number</code> (i.e. multiply it by itself). Output the result to
+        the console. Then return the result.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Parameters and Scopes
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_PmG96omvw7).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Parameters 1</th>
+      <td>
+        <ul>
+          <li>
+            Create a function inside <code>Exer.parameters1</code> named
+            <code>spaceCubeDetector</code>.
+          </li>
+          <li>
+            <code>spaceCubeDetector</code> should accept a <code>length</code>,
+            <code>width</code>, and <code>height</code>.
+          </li>
+          <li>
+            When length, width, and height are all equal,
+            <code>spaceCubeDetector</code> should return the string value
+            <code>SPACE CUBE DETECTED!!</code>
+          </li>
+          <li>
+            When its length, width, or height is not all equal to each other, it
+            should return the string value <code>THIS IS NO SPACE CUBE!</code>
+          </li>
+          <li>
+            <code>Exer.parameters1</code> should return
+            <code>spaceCubeDetector</code>.
+          </li>
+      </td>
+    </tr>
+    <tr>
+      <th>Parameters 2</th>
+      <td>
+        <p>
+          <code>Exer.parameters2</code> receives <code>spaceCubeDetector</code>
+          as a paremeter.
+        </p>
+        <ul>
+          <li>
+            Run <code>spaceCubeDetecor</code> once with a length of
+            <code>3</code>, width of <code>5</code>, and height of
+            <code>3.14159265359</code>. Log its return value.
+          </li>
+          <li>
+            Run it with a length of <code>7</code>, width of <code>7</code>, and
+            height of <code>7</code> and log its return value.
+          </li>
+          <li>
+            Run it with a length of <code>1</code>, width of <code>2</code>, and
+            height of <code>3</code> and log its return value.
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Scope 1&ndash;5</th>
+      <td>
+        <p>
+          For Scope exercises 1-5, read through the following code and find the
+          values for the variables where noted by the comments. Write your
+          asnwers as return values for the functions
+          <code>Exer.scope[1-5]</code>.
+        </p>
+<pre>Exer.scopeExample = function() {
+
+  var foo = 2;
+  var bar = 7;
+  var quux = 11;
+
+  var skip = function() {
+    var foo = 5;
+    console.log(foo); // Scope 1: What value of foo is logged?
+    quux = foo *  bar;
+    console.log(quux); // Scope 2: What value of quux is logged?
+    return bar;
+  };
+
+  var scoop = function(quux) {
+    console.log(quux); // Scope 4: What value of quux is logged?
+  };
+
+  var scrap = function() {
+    console.log(quux); // Scope 5: What value of quux is logged?
+  };
+
+  foo = skip();
+  scoop(foo); // Scope 3: What value of foo is passed to the function Scoop?
+  scrap();
+
+};</pre>
+        <p>
+          This code also appears in <code>./exercises.js</code>. You may find
+          the syntax highlighting helpful.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Nested Scope
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_xIVEBXHt8p).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Nested 1-20</th>
+      <td>
+        <p>
+          For Nested Scope exercises 1-20, read through the following code and
+          find the values for the variables where noted by the comments. Write
+          your answers as the return values for functions Exer.nest[1-20].
+        </p>
+<pre>Exer.nestExample = function() {
+
+  var foo = 2;
+  var bar = 5;
+  var quux = 7;
+
+  var nest = function(foo) {
+
+    var bar = 11;
+
+    var finch = function(foo) {
+      console.log(foo); // Nest 8: What value of foo is logged?
+      bar = foo;
+      quux = foo;
+    };
+
+    console.log(bar); // Nest 4: What value of bar is logged?
+    console.log(quux); // Nest 5: What value of quux is logged?
+
+    var robin = function() {
+      var bar = 13;
+      quux = bar;
+      console.log(quux); // Nest 11: What value of quux is logged?
+    };
+
+    console.log(bar); // Nest 6: What value of bar is logged?
+    console.log(quux); // Nest 7: What value of quux is logged?
+
+    var batman = function() {
+      foo = 0;
+      bar = 0;
+      quux = 0;
+      return "I AM THE NIGHT!!";
+    };
+
+    finch(17);
+
+    console.log(bar); // Nest 9: What value of bar is logged?
+    console.log(quux); // Nest 10: What value of quux is logged?
+
+    robin();
+
+    console.log(quux); // Nest 12: What value of quux is logged?
+
+    if (batman()) {
+      console.log(foo); // Nest 13: What value of foo is logged?
+      console.log(bar); // Nest 14: What value of bar is logged?
+      console.log(quux); // Nest 15: What value of quux is logged?
+    }
+  };
+
+  console.log(foo); // Nest 1: What value of foo is logged?
+  console.log(bar); // Nest 2: What value of bar is logged?
+  console.log(quux); // Nest 3: What value of quux is logged?
+
+  nest(19);
+
+  console.log(foo); // Nest 16: What value of foo is logged?
+  console.log(bar); // Nest 17: What value of bar is logged?
+  console.log(quux); // Nest 18: What value of quux is logged?
+
+};</pre>
+        <p>
+          This code also appears in <code>./exercises.js</code>. You may find
+          the syntax highlighting helpful.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Functions as Values
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_uliI/PmHtG).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Declaration Notation
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_OGu288jvIV).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Declaration 1</th>
+      <td>
+        Use declaration notation to declare a function called
+        <code>testNinja</code> that takes no parameters and logs the string
+        <code>You gotta believe!</code>.
+      </td>
+    </tr>
+    <tr>
+      <th>Declaration 2</th>
+      <td>
+        <ol>
+          <li>
+            Call a function called <code>trainNinja</code> with the argument
+            <code>"punch"</code> and log what <code>trainNinja</code>
+            returns.
+          </li>
+          <li>
+            After/below that, use declaration notation to declare the
+            <code>trainNinja</code> function. <code>trainNinja</code> takes one
+            argument called <code>move</code>. <code>trainNinja</code> should
+            use <code>move</code> to return the string <code>Kick, {move},
+            block! It's all in the mind!</code> (do not include the curly braces
+            in your return string).
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## The Call Stack
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#c_wm1DV2942b).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Optional Arguments
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#c_d9pZXzK1kY).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Closure
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#c_rwDFIqBrDl).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Recursion
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_SZYpNI2fMu).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Growing Functions
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_acU+LwVT0i).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+## Functions and Side Effects
+
+These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#p_EWzoSpSKwh).
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise #</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<br / >
+
+* * *
+
+<br / >
+
+# End of Chapter Exercises
+
+## Minimum
+
+The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#h_XTmO7z7MPq).
+
+<br / >
+
+* * *
+
+<br / >
+
+## Recursion exercise
+
+The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#p_iDq2OgBOGw).
+
+<br / >
+
+* * *
+
+<br / >
+
+## Bean Counting
+
+The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#h_3rsiDgC2do).
