@@ -4,16 +4,13 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Defining a Function    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-//=============================// wrapper:
-var three, myLog, square;      // necessary for tests
-Exer.defining = function () {  // do not remove or alter
-//=============================//
-
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
 
-var three = function () { return 3; };
+Exer.defining1 = function () {
+  var three = function () { return 3; };
+}
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
@@ -21,26 +18,24 @@ var three = function () { return 3; };
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
 
-var myLog = function ( message ) {
-  console.log( "The Log Says: " + message );
-};
+Exer.defining2 = function () {
+  var myLog = function ( message ) {
+    console.log( "The Log Says: " + message );
+  };
+}
 
 /******************************    DEFINING 3    ******************************/
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
 
-var square = function ( number ) {
-  number *= number;
-  console.log( number );
-  return number;
-};
-
-//==========================//
-  Exer.defining1 = three;   //
-  Exer.defining2 = myLog;   //
-  Exer.defining3 = square;  //
-};  //======================//
+Exer.defining3 = function () {
+  var square = function ( number ) {
+    number *= number;
+    console.log( number );
+    return number;
+  };
+}
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^

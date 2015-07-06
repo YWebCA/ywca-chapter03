@@ -4,16 +4,13 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Defining a Function    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-//=============================// wrapper:
-var three, myLog, square;      // necessary for tests
-Exer.defining = function () {  // do not remove or alter
-//=============================//
-
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
 
+Exer.defining1 = function () {
 
+}
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
@@ -21,21 +18,18 @@ Exer.defining = function () {  // do not remove or alter
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
 
-
+Exer.defining2 = function () {
+  
+}
 
 /******************************    DEFINING 3    ******************************/
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
 
-
-
-//==========================//
-  Exer.defining1 = three;   //
-  Exer.defining2 = myLog;   //
-  Exer.defining3 = square;  //
-};  //======================//
-
+Exer.defining3 = function () {
+  
+}
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
@@ -260,13 +254,7 @@ Exer.nest18 = function() {
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Functions as Values    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-//=====================================================//
-Exer.values1 = function ( area, spaceCubeDetector ) {  //
-//=====================================================//
-
-
-
-};  // wrapper end
+// Nate
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^

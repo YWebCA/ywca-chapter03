@@ -2,43 +2,48 @@
 // Nate
 describe("Defining a Function exercises", function() {
 
-  beforeAll( function () {
-    Exer.defining();
-  } );
-
   describe("Defining 1", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining1.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
     it("should define a function named three", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+three\s*=\s*function/m );
+      expect( this.functionDefinition ).toMatch( /^\s*var\s+three\s*=\s*function/m );
     } );
     it("should have said function return the value 3", function () {
-      expect( Exer.defining1() ).toBe( 3 );
+      expect( this.functionDefinition ).toMatch( /return 3/m );
     } );
   });
 
   describe("Defining 2", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining2.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
     it("should define a function named myLog", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function/m );
+      expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function/m );
     } );
     it("should have said function accept a parameter named message", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function\s*\(\s*message\s*\)/m );
+      expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function\s*\(\s*message\s*\)/m );
     } );
     it("should have said function log \"The Log Says: {message}\"", function () {
-      console.log( "Defining 2:" );
       spyOn( console, 'log' ).and.callThrough();
+      eval(this.functionDefinition);
       var message = "I'm a secret passphrase!";
-      Exer.defining2( message );
-      expect( console.log.calls.allArgs() ).toEqual( [ [ "The Log Says: " + message ] ] );
+      myLog( message );
+      expect( "" + console.log.calls.argsFor(0) ).toBe( "The Log Says: " + message );
     } );
   });
 
   describe("Defining 3", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining3.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
 
     describe( "Structure", function () {
       it("should define a function named square", function () {
-        expect( Exer.defining.toString() ).toMatch( /^\s*var\s*square\s*=\s*function/m );
+        expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s*square\s*=\s*function/m );
       } );
       it("should have said function accept a parameter named number", function () {
-        expect( Exer.defining.toString() ).toMatch( /^\s*var\s*square\s*=\s*function\s*\(\s*number\s*\)/m );
+        expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s*square\s*=\s*function\s*\(\s*number\s*\)/m );
       } );
     } );
 
@@ -48,13 +53,14 @@ describe("Defining a Function exercises", function() {
       beforeAll( function () {
         console.log( "Defining 3:" );
         spyOn( console, 'log' ).and.callThrough();
-        answer = Exer.defining3( number );
+        eval(this.functionDefinition);
+        answer = square( number );
       } );
       it("should have said function return number squared", function () {
         expect( answer ).toBe( number * number );
       } );
       it("should have said function output number squared to the console", function () {
-        expect( console.log.calls.allArgs() ).toEqual( [[ number * number ]] );
+        expect( "" + console.log.calls.argsFor(0) ).toBe( "" + answer );
       } );
     } );
 
