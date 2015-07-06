@@ -323,7 +323,7 @@ describe("Nested Scope exercises", function() {
 
 /*************************    Functions as Values    **************************/
 // Nate
-fdescribe( "Functions as Values exercises", function () {
+describe( "Functions as Values exercises", function () {
   describe( "Values 1", function () {
     beforeAll( function () {
       this.volume = function () {}
