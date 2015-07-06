@@ -4,16 +4,13 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Defining a Function    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-//=============================// wrapper:
-var three, myLog, square;      // necessary for tests
-Exer.defining = function () {  // do not remove or alter
-//=============================//
-
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
 
-var three = function () { return 3; };
+Exer.defining1 = function () {
+  var three = function () { return 3; };
+}
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
@@ -21,26 +18,24 @@ var three = function () { return 3; };
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
 
-var myLog = function ( message ) {
-  console.log( "The Log Says: " + message );
-};
+Exer.defining2 = function () {
+  var myLog = function ( message ) {
+    console.log( "The Log Says: " + message );
+  };
+}
 
 /******************************    DEFINING 3    ******************************/
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
 
-var square = function ( number ) {
-  number *= number;
-  console.log( number );
-  return number;
-};
-
-//==========================//
-  Exer.defining1 = three;   //
-  Exer.defining2 = myLog;   //
-  Exer.defining3 = square;  //
-};  //======================//
+Exer.defining3 = function () {
+  var square = function ( number ) {
+    number *= number;
+    console.log( number );
+    return number;
+  };
+}
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -275,13 +270,42 @@ Exer.nest18 = function() {
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Functions as Values    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-//=====================================================//
-Exer.values1 = function ( area, spaceCubeDetector ) {  //
-//=====================================================//
 
-  area = spaceCubeDetector;
+/****************************    Values 1    *****************************/
+// Your project manager heard about your function SpaceCubeDetector.
+// Understanding that it takes a length, a width, and a height, he has
+// decided that it would make a good function to find the volume of a
+// rectangular prism. You try to correct him, but the boss is the boss.
+// Given variables volume and spaceCubeDetector, assign the spaceCubeDetector
+// function value to the volume variable. Call volume after the assignment
+// to assure it was assigned. Then, return the volume variable.
+// Your project manager can figure out his mistake later.
+//=================================//
+Exer.values1 = function ( volume, spaceCubeDetector ) {
 
-};  // wrapper end
+  volume = spaceCubeDetector;
+  volume(1,2,3);
+  return volume;
+
+};
+
+/****************************    Values 2    *****************************/
+// Your project manager just came back. He doesn't think the volume of a
+// 7 by 3 by 2 space is "THIS IS NO SPACE CUBE!" He is right. You were right
+// first, but best not to correct him though. Let's just make the changes
+// needed. Volume has been passed back to you. Assign a new function to
+// volume that takes a length, a width, and a height and returns their
+// product. Return the new volume function when you are done.
+//=================================//
+Exer.values2 = function ( volume ) {
+
+  volume = function (length, width, height) {
+    return length * width * height;
+  }
+
+  return volume;
+
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -2,43 +2,48 @@
 // Nate
 describe("Defining a Function exercises", function() {
 
-  beforeAll( function () {
-    Exer.defining();
-  } );
-
   describe("Defining 1", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining1.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
     it("should define a function named three", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+three\s*=\s*function/m );
+      expect( this.functionDefinition ).toMatch( /^\s*var\s+three\s*=\s*function/m );
     } );
     it("should have said function return the value 3", function () {
-      expect( Exer.defining1() ).toBe( 3 );
+      expect( this.functionDefinition ).toMatch( /return 3/m );
     } );
   });
 
   describe("Defining 2", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining2.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
     it("should define a function named myLog", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function/m );
+      expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function/m );
     } );
     it("should have said function accept a parameter named message", function () {
-      expect( Exer.defining.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function\s*\(\s*message\s*\)/m );
+      expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function\s*\(\s*message\s*\)/m );
     } );
     it("should have said function log \"The Log Says: {message}\"", function () {
-      console.log( "Defining 2:" );
       spyOn( console, 'log' ).and.callThrough();
+      eval(this.functionDefinition);
       var message = "I'm a secret passphrase!";
-      Exer.defining2( message );
-      expect( console.log.calls.allArgs() ).toEqual( [ [ "The Log Says: " + message ] ] );
+      myLog( message );
+      expect( "" + console.log.calls.argsFor(0) ).toBe( "The Log Says: " + message );
     } );
   });
 
   describe("Defining 3", function() {
+    beforeAll(function() {
+      this.functionDefinition = Exer.defining3.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+    });
 
     describe( "Structure", function () {
       it("should define a function named square", function () {
-        expect( Exer.defining.toString() ).toMatch( /^\s*var\s*square\s*=\s*function/m );
+        expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s*square\s*=\s*function/m );
       } );
       it("should have said function accept a parameter named number", function () {
-        expect( Exer.defining.toString() ).toMatch( /^\s*var\s*square\s*=\s*function\s*\(\s*number\s*\)/m );
+        expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s*square\s*=\s*function\s*\(\s*number\s*\)/m );
       } );
     } );
 
@@ -48,13 +53,14 @@ describe("Defining a Function exercises", function() {
       beforeAll( function () {
         console.log( "Defining 3:" );
         spyOn( console, 'log' ).and.callThrough();
-        answer = Exer.defining3( number );
+        eval(this.functionDefinition);
+        answer = square( number );
       } );
       it("should have said function return number squared", function () {
         expect( answer ).toBe( number * number );
       } );
       it("should have said function output number squared to the console", function () {
-        expect( console.log.calls.allArgs() ).toEqual( [[ number * number ]] );
+        expect( "" + console.log.calls.argsFor(0) ).toBe( "" + answer );
       } );
     } );
 
@@ -318,21 +324,43 @@ describe("Nested Scope exercises", function() {
 /*************************    Functions as Values    **************************/
 // Nate
 describe( "Functions as Values exercises", function () {
-  beforeAll( function () {
-    console.log( "VALUES 1:" );
-    Exer.values1( Exer.area, Exer.spaceCubeDetector );
-  } );
   describe( "Values 1", function () {
-    it( "given spaceCubeDetector and area should assign spaceCubeDetector to area", function () {
-      expect( Exer.area ).toEqual( Exer.spaceCubeDetector );
+    beforeAll( function () {
+      this.volume = function () {}
+      spyOn(Exer, 'spaceCubeDetector').and.callThrough();
+      spyOn(this, 'volume').and.callThrough();
+      this.result = Exer.values1(this.volume, Exer.spaceCubeDetector);
     } );
-    it("given spaceCubeDetector and area should call each once after the assignment");
-    it("given spaceCubeDetector and area should call to the function value of spaceCubeDetector twice after the assignment");
-    it("given spaceCubeDetector and area should return the new area");
+    it( "given spaceCubeDetector and volume should assign spaceCubeDetector to volume", function () {
+      expect( Exer.values1.toString() ).toMatch(/volume\s+=\s+spaceCubeDetector/m);
+    } );
+    it("given spaceCubeDetector and volume should call volume once after assignement", function () {
+      expect( Exer.values1.toString() ).toMatch(/volume\([^\(\),]*,[^\(\),]*,[^\(\),]*\);/);
+      expect( this.volume.calls.count() ).toEqual(0);
+    } );
+    it("given spaceCubeDetector and volume should call to the function value of spaceCubeDetector once after the assignment", function() {
+      expect( Exer.values1.toString() ).not.toMatch(/spaceCubeDetector\([^\(\)]*\);/);
+      expect( Exer.spaceCubeDetector.calls.count() ).toEqual(1);
+    });
+    it("given spaceCubeDetector and volume should return the new volume", function() {
+      expect( this.result ).toEqual(Exer.spaceCubeDetector);
+    });
   });
   describe("Values 2", function() {
-    it("given area should assign a new function to area that returns the product of length, width, and height");
-    it("given area should return the new area");
+    beforeAll(function() {
+      this.result = Exer.values2(null);
+    });
+    it("given volume should assign a new function to volume", function() {
+      expect( Exer.values2.toString() ).toMatch(/volume\s+=\s+function/m);
+    });
+    it("given volume should return the new volume", function() {
+      expect( typeof this.result ).toBe("function");
+    });
+    it("should return a volume function that calculates proper volumes", function() {
+      expect( 2*3*7 ).toEqual(this.result(2,3,7));
+      expect( 5*5*5 ).toEqual(this.result(5,5,5));
+      expect( 9*2*5 ).toEqual(this.result(9,2,5));
+    });
   });
 });
 

@@ -1,5 +1,6 @@
 // Povided Resources for Chapter Exercises
-Exer = {};
+global.Exer = {};
+
 
 // Test for being in node
 global.weAreInNode = function() {
@@ -23,3 +24,6 @@ if ( weAreInNode() ) {
 
 // Provided Resources for Chapter Exercises
 
+global.Exer = {
+  spaceCubeDetector: null
+};
