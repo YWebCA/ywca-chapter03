@@ -323,22 +323,44 @@ describe("Nested Scope exercises", function() {
 
 /*************************    Functions as Values    **************************/
 // Nate
-describe( "Functions as Values exercises", function () {
-  beforeAll( function () {
-    console.log( "VALUES 1:" );
-    Exer.values1( Exer.area, Exer.spaceCubeDetector );
-  } );
+fdescribe( "Functions as Values exercises", function () {
   describe( "Values 1", function () {
-    it( "given spaceCubeDetector and area should assign spaceCubeDetector to area", function () {
-      expect( Exer.area ).toEqual( Exer.spaceCubeDetector );
+    beforeAll( function () {
+      this.volume = function () {}
+      spyOn(Exer, 'spaceCubeDetector').and.callThrough();
+      spyOn(this, 'volume').and.callThrough();
+      this.result = Exer.values1(this.volume, Exer.spaceCubeDetector);
     } );
-    it("given spaceCubeDetector and area should call each once after the assignment");
-    it("given spaceCubeDetector and area should call to the function value of spaceCubeDetector twice after the assignment");
-    it("given spaceCubeDetector and area should return the new area");
+    it( "given spaceCubeDetector and volume should assign spaceCubeDetector to volume", function () {
+      expect( Exer.values1.toString() ).toMatch(/volume\s+=\s+spaceCubeDetector/m);
+    } );
+    it("given spaceCubeDetector and volume should call volume once after assignement", function () {
+      expect( Exer.values1.toString() ).toMatch(/volume\([^\(\),]*,[^\(\),]*,[^\(\),]*\);/);
+      expect( this.volume.calls.count() ).toEqual(0);
+    } );
+    it("given spaceCubeDetector and volume should call to the function value of spaceCubeDetector once after the assignment", function() {
+      expect( Exer.values1.toString() ).not.toMatch(/spaceCubeDetector\([^\(\)]*\);/);
+      expect( Exer.spaceCubeDetector.calls.count() ).toEqual(1);
+    });
+    it("given spaceCubeDetector and volume should return the new volume", function() {
+      expect( this.result ).toEqual(Exer.spaceCubeDetector);
+    });
   });
   describe("Values 2", function() {
-    it("given area should assign a new function to area that returns the product of length, width, and height");
-    it("given area should return the new area");
+    beforeAll(function() {
+      this.result = Exer.values2(null);
+    });
+    it("given volume should assign a new function to volume", function() {
+      expect( Exer.values2.toString() ).toMatch(/volume\s+=\s+function/m);
+    });
+    it("given volume should return the new volume", function() {
+      expect( typeof this.result ).toBe("function");
+    });
+    it("should return a volume function that calculates proper volumes", function() {
+      expect( 2*3*7 ).toEqual(this.result(2,3,7));
+      expect( 5*5*5 ).toEqual(this.result(5,5,5));
+      expect( 9*2*5 ).toEqual(this.result(9,2,5));
+    });
   });
 });
 
