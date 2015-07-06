@@ -283,9 +283,7 @@ Exer.declaration1 = function () {  //
 
 
 
-//=============================//
-  Exer.testNinja = testNinja;  //
-};  //=========================//
+};
 
 /****************************    DECLARATION 2    *****************************/
 // 1. Call a function called `trainNinja` with the argument "punch"

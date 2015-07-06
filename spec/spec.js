@@ -341,7 +341,7 @@ describe( "Declaration Notation exercises", function() {
 
   describe( "Declaration 1", function () {
     beforeAll( function () {
-      Exer.declaration1();
+      Exer.testNinja = Exer.declaration1();
     } );
     it( "should declare a function called testNinja", function () {
       var work = Exer.declaration1.toString();
@@ -365,7 +365,7 @@ describe( "Declaration Notation exercises", function() {
     } );
     it( "should call trainNinja with the argument \"punch\"", function () {
       var work = Exer.declaration2.toString();
-      work = work.match( /trainNinja\(\s*"punch"\s*\)/mg );
+      work = work.match( /trainNinja\(\s*['"]punch['"]\s*\)/mg );
       expect( work ).not.toBeNull();
     } );
     it( "should log the result of calling trainNinja", function () {
@@ -382,7 +382,7 @@ describe( "Declaration Notation exercises", function() {
       var work = Exer.declaration2.toString().split( '\n' );
       var flag = false;
       for( var i = 0; i < work.length; i++ ) {
-        var test = work[i].match( /trainNinja\(\s*"punch"\s*\).*;/g );
+        var test = work[i].match( /trainNinja\(\s*['"]punch['"]\s*\).*;/g );
         if( test ) {
           for( i; i < work.length; i++ ) {
             test = work[i].match( /^\s*function\s+trainNinja\s*\(\s*move\s*\)\s*\{$/g );
