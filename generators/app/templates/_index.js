@@ -302,7 +302,42 @@ Exer.declaration2 = function () {  //
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    The Call Stack    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Nate
+
+/*******************************    STACK 1    ********************************/
+// 1. Push three pancakes in this order: `apple`, `banana`, and
+//    `chocolate chip`.
+// 2. Pop one pancake and save it in a variable called `yum`.
+// 3. Push two pancakes: `bacon` and `snozzberries`.
+// 4. Pop one pancake and concatenate it to the end of `yum`, but put a space
+//    (' ') between the two flavors.
+// 5. Return yum.
+//=================================//
+Exer.stack1 = function ( jack ) {  //
+//=================================//
+
+
+
+};  // wrapper end
+
+/*******************************    STACK 2    ********************************/
+// Jack already has three pancakes warming on his plate: `apple`, `banana`,
+// and `bacon`.
+// 1. Pop two pancakes.
+// 2. Push one `breadfruit` pancake.
+// 3. Log how many pancakes Jack has.
+// 4. Push two pancakes: `strawberry` and `durian`.
+// 5. Pop one pancake and then push it back on.
+// 6. Log the flavor of the pancake on top of the stack.
+// 7. Pancake number 2 from the bottom is pancake number _____ from the top. Log
+//    your answer.
+// 6. Return Jack.
+//=================================//
+Exer.stack2 = function ( jack ) {  //
+//=================================//
+
+
+
+};  // wrapper end
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^

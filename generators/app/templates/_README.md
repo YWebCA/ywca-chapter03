@@ -369,6 +369,24 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
 
 These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#c_wm1DV2942b).
 
+You are given your very own pancake flipping robot named `jack`. He can make pancakes with his two spatula arms and hold warm pancakes on a plate on
+his head.
+
+Jack responds to two oddly-named commands: `push()` and `pop()`. When you tell
+Jack to `push`, he cooks and flips a flapjack onto his stack. When you tell
+Jack to `pop`, he takes a flapjack off of his stack and gives it to you. And
+the best part is that you can tell him what flavor of pancake to `push` by
+invoking the command with a string.
+
+So you have:
+
+* `jack`: a pancake-flipping robot. You can log Jack to see what pancakes are
+  on his plate, i.e. `console.log( jack )`
+* `jack.push( 'flavor' )`: put a pancake of `flavor` on Jack's stack. You can
+  push multiple flavors at once, e.g.
+  `jack.push( 'flavor1', 'flavor2', 'flavor3' )`
+* `jack.pop()`: get a pancake off the stack. `pop()` returns a string
+
 <table>
   <thead>
     <tr>
@@ -378,11 +396,62 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
   </thead>
   <tbody>
     <tr>
-      <th></th>
-      <td></td>
+      <th>Stack 1</th>
+      <td>
+        <ol>
+          <li>
+            Push three pancakes in this order: <code>apple</code>,
+            <code>banana</code>, and <code>chocolate chip</code>.
+          </li>
+          <li>
+            Pop one pancake and save it in a variable called <code>yum</code>.
+          </li>
+          <li>
+            Push two pancakes: <code>bacon</code> and <code>snozzberries</code>.
+          </li>
+          <li>
+            Pop one pancake and concatenate it to the end of <code>yum</code>,
+            but put a space (<code>' '</code>) between the two flavors.
+          </li>
+          <li>Return <code>yum</code>.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <th>Stack 2</th>
+      <td>
+        <p>
+          Jack already has three pancakes warming on his plate:
+          <code>apple</code>, <code>banana</code>, and <code>bacon</code>.
+        </p>
+        <ol>
+          <li>Pop two pancakes.</li>
+          <li>Push one <code>breadfruit</code> pancake.</li>
+          <li>Log how many pancakes Jack has.</li>
+          <li>
+            Push two pancakes: <code>strawberry</code> and <code>durian</code>.
+          </li>
+          <li>Pop one pancake and then push it back on.</li>
+          <li>Log the flavor of the pancake on top of the stack.</li>
+          <li>
+            Pancake number 2 from the bottom is pancake number _____ from the
+            top. Log your answer.
+          </li>
+          <li>Return Jack.</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
+
+So what does a stack of pancakes have to do with running a program? Whenever
+you call a function, the program has to remember where to return to when the
+function ends. So, the program makes a note and pushes the note onto the call
+stack. When the function returns, the program pops the last location off the
+stack and goes back to where it left off before the call. We can only add new
+calls (pancakes) to the top of the stack, and we can only remove them from the
+very top of the stack. That means we can only return to where were were
+last&mdash;we can't skip any steps.
 
 <br / >
 

@@ -283,11 +283,96 @@ Exer.values1 = function ( area, spaceCubeDetector ) {  //
 
 };  // wrapper end
 
-/*************************    Declaration Notation    *************************/
-// Annalise
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
 
-/****************************    The Call Stack    ****************************/
-// Nate
+/****************************    DECLARATION 1    *****************************/
+// Use declaration notation to declare a function called `testNinja` that has no
+//     parameters
+// `testNinja` should log the string "You gotta believe!"
+// Return `testNinja` from `Exer.declaration1`
+//=================================//
+Exer.declaration1 = function () {  //
+//=================================//
+
+  function testNinja () {
+    console.log( 'You gotta believe!' );
+  }
+
+  return testNinja;
+
+};
+
+/****************************    DECLARATION 2    *****************************/
+// 1. Call a function called `trainNinja` with the argument "punch"
+//    Log what `trainNinja` returns
+// 2. Declare a function called `trainNinja` that takes one parameter called
+//        `move`
+//    `trainNinja` should return the correct string
+//=================================//
+Exer.declaration2 = function () {  //
+//=================================//
+
+  console.log( trainNinja( 'punch' ) );
+
+  function trainNinja ( move ) {
+    return "Kick, " + move + ", block! It's all in the mind!" ;
+  }
+
+};  // wrapper end
+
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    The Call Stack    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
+
+/*******************************    STACK 1    ********************************/
+// 1. Push three pancakes in this order: `apple`, `banana`, and
+//    `chocolate chip`.
+// 2. Pop one pancake and save it in a variable called `yum`.
+// 3. Push two pancakes: `bacon` and `snozzberries`.
+// 4. Pop one pancake and concatenate it to the end of `yum`, but put a space
+//    (' ') between the two flavors.
+// 5. Return yum.
+//=================================//
+Exer.stack1 = function ( jack ) {  //
+//=================================//
+
+  jack.push( 'apple', 'banana', 'chocolate chip' );
+  var yum = jack.pop();
+  jack.push( 'bacon', 'snozzberries' );
+  yum += ' ' + jack.pop();
+  return yum;
+
+};  // wrapper end
+
+/*******************************    STACK 2    ********************************/
+// Jack already has three pancakes warming on his plate: `apple`, `banana`,
+// and `bacon`.
+// 1. Pop two pancakes.
+// 2. Push one `breadfruit` pancake.
+// 3. Log how many pancakes Jack has.
+// 4. Push two pancakes: `strawberry` and `durian`.
+// 5. Pop one pancake and then push it back on.
+// 6. Log the flavor of the pancake on top of the stack.
+// 7. Pancake number 2 from the bottom is pancake number _____ from the top. Log
+//    your answer.
+// 6. Return Jack.
+//=================================//
+Exer.stack2 = function ( jack ) {  //
+//=================================//
+
+  jack.pop();
+  jack.pop();
+  jack.push( 'breadfruit' );
+  console.log( jack.length );
+  jack.push( 'strawberry', 'durian' );
+  jack.push( jack.pop() );
+  console.log( 'durian' );
+  console.log( 3 );
+  return jack;
+
+};  // wrapper end
 
 /**************************    Optional Arguments    **************************/
 // Annalise

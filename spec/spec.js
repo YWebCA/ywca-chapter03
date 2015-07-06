@@ -397,9 +397,31 @@ describe( "Declaration Notation exercises", function() {
 } );
 
 /****************************    The Call Stack    ****************************/
-// Nate
 describe("The Call Stack exercises", function() {
-  it("should test a thing");
+  var jack = [];
+  beforeAll( function () {
+    console.log( 'STACK 1 & 2:' );
+    spyOn( console, 'log' ).and.callThrough();
+  } );
+  describe( "Stack 1", function () {
+    it( "should return two pancake flavors, concatenated", function () {
+      expect( Exer.stack1( jack ) ).toBe( 'chocolate chip snozzberries' );
+    } );
+  } );
+  describe( "Stack 2", function () {
+    it( "should return a stack of four pancakes", function () {
+      expect( Exer.stack2( jack ) ).toEqual( [ 'apple', 'breadfruit', 'strawberry', 'durian' ] );
+    } );
+    it( "should log the number of pancakes in the stack", function () {
+      expect( console.log ).toHaveBeenCalledWith(2);
+    } );
+    it( "should log the flavor of the top pancake", function () {
+      expect( console.log ).toHaveBeenCalledWith( 'durian' );
+    } );
+    it( "should log the order of the pancake in question", function () {
+      expect( console.log ).toHaveBeenCalledWith( 3 );
+    } );
+  } );
 });
 
 /**************************    Optional Arguments    **************************/
