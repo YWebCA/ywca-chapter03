@@ -271,41 +271,34 @@ Exer.nest18 = function() {
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Functions as Values    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-/****************************    Values 1    *****************************/
-// Your project manager heard about your function SpaceCubeDetector.
-// Understanding that it takes a length, a width, and a height, he has
-// decided that it would make a good function to find the volume of a
-// rectangular prism. You try to correct him, but the boss is the boss.
-// Given variables volume and spaceCubeDetector, assign the spaceCubeDetector
-// function value to the volume variable. Call volume after the assignment
-// to assure it was assigned. Then, return the volume variable.
-// Your project manager can figure out his mistake later.
-//=================================//
-Exer.values1 = function ( volume, spaceCubeDetector ) {
+/******************************    Values 1    ********************************/
+// Given the parameters `volume` and `spaceCubeDetector`, assign the
+// `spaceCubeDetector` function value to the `volume` variable. Call `volume`
+// after the assignment. Then, return `volume`.
+//=======================================================//
+Exer.values1 = function ( volume, spaceCubeDetector ) {  //
+//=======================================================//
 
-  volume = spaceCubeDetector;
-  volume(1,2,3);
+  volume = spaceCubeDetector ;
+  volume( 1, 2, 3 );
   return volume;
 
-};
+};  // wrapper end
 
-/****************************    Values 2    *****************************/
-// Your project manager just came back. He doesn't think the volume of a
-// 7 by 3 by 2 space is "THIS IS NO SPACE CUBE!" He is right. You were right
-// first, but best not to correct him though. Let's just make the changes
-// needed. Volume has been passed back to you. Assign a new function to
-// volume that takes a length, a width, and a height and returns their
-// product. Return the new volume function when you are done.
-//=================================//
-Exer.values2 = function ( volume ) {
+/******************************    Values 2    ********************************/
+// Assign a new function to `volume` that takes a length, a width, and a height
+// and returns their product. Return the new `volume` function when you
+// are done.
+//====================================//
+Exer.values2 = function ( volume ) {  //
+//====================================//
 
-  volume = function (length, width, height) {
-    return length * width * height;
-  }
-
+  volume = function ( length, width, height ) {
+    return length * width * height ;
+  };
   return volume;
 
-};
+};  // wrapper end
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -306,25 +306,39 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
     <tr>
       <th>Values 1</th>
       <td>
-        Your project manager heard about your function <code>spaceCubeDetector</code>. 
-        Understanding that it takes a length, a width, and a height, he has
-        decided that it would make a good function to find the volume of a
-        rectangular prism. You try to correct him, but the boss is the boss.
-        Given variables <code>volume</code> and <code>spaceCubeDetector</code>, assign the <code>spaceCubeDetector</code>
-        function value to the <code>volume</code> variable. Call <code>volume</code> after the assignment
-        to assure it was assigned. Then, return the <code>volume</code> variable.
-        Your project manager can figure out his mistake later.
+        <p>
+          Your project manager heard about your function
+          <code>spaceCubeDetector</code>. Understanding that it takes a length,
+          a width, and a height, he has decided that it would make a good
+          function to find the volume of a rectangular prism. You try to correct
+          him, but the boss is the boss.
+        </p>
+        <p>
+          Given the parameters <code>volume</code> and
+          <code>spaceCubeDetector</code>, assign the
+          <code>spaceCubeDetector</code> function value to the
+          <code>volume</code> variable. Call <code>volume</code> after the
+          assignment to assure it was assigned. Then, return the
+          <code>volume</code> variable.
+        </p>
+        <p>Your project manager can figure out his mistake later.</p>
       </td>
     </tr>
     <tr>
       <th>Values 2</th>
       <td>
-        Your project manager just came back. He doesn't think the volume of a
-        7 by 3 by 2 space is "THIS IS NO SPACE CUBE!" He is right. You were right
-        first, but best not to correct him. Let's just make the changes
-        needed. <code>volume</code> has been passed back to you. Assign a new function to
-        <code>volume</code> that takes a length, a width, and a height and returns their
-        product. Return the new <code>volume</code> function when you are done.
+        <p>
+          Your project manager just came back. He doesn't think the volume of a
+          7 by 3 by 2 space is "THIS IS NO SPACE CUBE!" He is right. You were
+          right first, but it's best not to correct him. Just make the
+          necessary changes.
+        </p>
+        <p>
+          <code>volume</code> has been passed back to you. Assign a new
+          function to <code>volume</code> that takes a length, a width, and a
+          height and returns their product. Return the new <code>volume</code>
+          function when you are done.
+        </p>
       </td>
     </tr>
   </tbody>
