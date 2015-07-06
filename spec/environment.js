@@ -1,5 +1,5 @@
 // Povided Resources for Chapter Exercises
-Exerercises = {};
+Exer = {};
 
 // Test for being in node
 global.weAreInNode = function() {

@@ -317,9 +317,15 @@ describe("Nested Scope exercises", function() {
 
 /*************************    Functions as Values    **************************/
 // Nate
-describe("Functions as Values exercises", function() {
-  describe("Values 1", function() {
-    it("given spaceCubeDetector and area should assign spaceCubeDetector to area");
+describe( "Functions as Values exercises", function () {
+  beforeAll( function () {
+    console.log( "VALUES 1:" );
+    Exer.values1( Exer.area, Exer.spaceCubeDetector );
+  } );
+  describe( "Values 1", function () {
+    it( "given spaceCubeDetector and area should assign spaceCubeDetector to area", function () {
+      expect( Exer.area ).toEqual( Exer.spaceCubeDetector );
+    } );
     it("given spaceCubeDetector and area should call each once after the assignment");
     it("given spaceCubeDetector and area should call to the function value of spaceCubeDetector twice after the assignment");
     it("given spaceCubeDetector and area should return the new area");
