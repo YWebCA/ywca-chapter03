@@ -531,8 +531,41 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
   </thead>
   <tbody>
     <tr>
-      <th></th>
-      <td></td>
+      <th>Closures 1</th>
+      <td>
+        Your project manager tells you that your function spaceCubeDetector has been a
+        great boon to the company and is producing value hand over fist. However,
+        the department in charge of producing heights takes twice as long as the
+        as either of the departments for length or width. The department in charge
+        of running spaceCubeDetector is getting held up while waiting for heights to
+        come in. Your project manager would like it if the length and width could
+        be entered seperately from the height.
+
+        Create a new version of spaceCubeDetector that takes a length and a width and
+        returns another function. The function spaceCubeDetector returns should take
+        a height and return the string "SPACE CUBE DETECTED!!" when length, width, and
+        height are the same and the string "THIS IS NO SPACE CUBE!" when they do not.
+
+        Return the new spaceCubeDetector.
+      </td>
+    </tr>
+    <tr>
+      <th>Closures 2</th>
+      <td>
+        Your project manager loves the changes you made, however, the llamas
+        responsible for opperating spaceCubeDetector have been sacked. The management
+        would like to change the workflow for spaceCubeDetector such that the
+        spaceCubeDetector fuction will be sent to the length department, who will then
+        pass a function to the width department, who in turn will pass a function to 
+        the height department. The height department will in turn, when the get to it,
+        pass the results tot he relevant llamas.
+
+        Your job in all of this is to make spaceCubeDetector into a function that
+        takes a length and returns a function that takes a width and returns a function
+        that takes a height and returns the normal results for spaceCubeDetector.
+
+        Return the new spaceCubeDetector.
+      </td>
     </tr>
   </tbody>
 </table>
