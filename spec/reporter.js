@@ -37,10 +37,14 @@ module.exports = {
         for (index in this.specs)
           if (this.specs[index].pass)
             output += chalk.green("*")
+          else
+            output += chalk.red("X")
 
         for (index in this.suites)
           if (this.suites[index].pass)
             output += chalk.green("*")
+          else
+            output += chalk.red("X")
 
         for (index in this.specs)
           if (!this.specs[index].pass)
