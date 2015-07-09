@@ -461,7 +461,44 @@ describe("Optional Arguments exercises", function() {
 /*******************************    Closure    ********************************/
 // Nate
 describe("Closure exercises", function() {
-  it("should test a thing");
+  describe( "Closures 1", function() {
+    beforeAll(function () {
+      Exer.spaceCubeDetector = Exer.closures1();
+    });
+    it("should return a partially curried function that returns \"THIS IS NO SPACE CUBE!\" when given 4 and 2 and then 5", function() {
+      var result = Exer.spaceCubeDetector(4, 2);
+      expect( typeof result ).toBe("function");
+      result = result(5);
+      expect( result ).toBe( "THIS IS NO SPACE CUBE!" );
+    });
+    it("should return a partially curried function that returns \"SPACE CUBE DETECTED\" when given 5 and 5 and then 5", function() {
+      var result = Exer.spaceCubeDetector(5, 5);
+      expect( typeof result ).toBe("function");
+      var result = result(5);
+      expect( result ).toBe( "SPACE CUBE DETECTED!!" );
+    });
+  });
+  describe( "Closures 2", function() {
+    beforeAll(function () {
+      Exer.spaceCubeDetector = Exer.closures2();
+    });
+    it("should return a curried function that returns \"THIS IS NO SPACE CUBE!\" when given 4, 2, and then 5", function() {
+      var result = Exer.spaceCubeDetector(4);
+      expect( typeof result ).toBe("function");
+      result = result(2);
+      expect( typeof result ).toBe("function");
+      result = result(5);
+      expect( result ).toBe( "THIS IS NO SPACE CUBE!" );
+    });
+    it("should return a curried function that returns \"SPACE CUBE DETECTED!!\" when given 5, 5, and then 5", function() {
+      var result = Exer.spaceCubeDetector(5);
+      expect( typeof result ).toBe("function");
+      result = result(5);
+      expect( typeof result ).toBe("function");
+      result = result(5);
+      expect( result ).toBe( "SPACE CUBE DETECTED!!" );
+    });
+  });
 });
 
 /******************************    Recursion    *******************************/
