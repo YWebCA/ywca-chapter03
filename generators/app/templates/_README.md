@@ -669,6 +669,22 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
 
 The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#h_XTmO7z7MPq).
 
+Work your solution in `./minimum.js`.
+
+Once you have completed the specifications in the book,
+
+1.  Prepare your solution so the test runner can see it. Modify `min`'s
+    declaration to make it a member of the `Exer` object. It should look
+    something like
+
+        Exer.min = function ( arg1, arg2 ) { ...
+
+2.  Create a function called `min3` (that is also a member of `Exer`) that
+    accepts three parameters and returns the minimum of all three.
+
+3.  Modify your solution such that `min` can find the minimum of either two or
+    three arguments.
+
 <br / >
 
 * * *
@@ -679,6 +695,25 @@ The instructions for this exercise can be found in [this section of the text](ht
 
 The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#p_iDq2OgBOGw).
 
+Work your solution in `./recursion.js`.
+
+Once you have completed the specifications in the book,
+
+1.  Prepare your solution so the test runner can see it. Modify `isEven`'s
+    declaration to make it a member of the `Exer` object. It should look
+    something like
+
+        Exer.isEven = function ( arg ) { ...
+
+2.  Create a funciton called `isFooDivByBar` (that is also a member of Exer).
+    This function should accept two parameters, `foo` and `bar`, and should
+    return `true` if `foo` is divisible by `bar` and `false` if it isn't.
+
+3.  Create a function called `isDivisibleBy` (that is also a member of Exer)
+    that accepts one parameter (e.g. `foo`) and returns a function that
+    determines whether or not an argument (e.g. `bar`) is divisible by the
+    parameter (`foo`).
+
 <br / >
 
 * * *
@@ -688,3 +723,14 @@ The instructions for this exercise can be found in [this section of the text](ht
 ## Bean Counting
 
 The instructions for this exercise can be found in [this section of the text](http://eloquentjavascript.net/03_functions.html#h_3rsiDgC2do).
+
+Work your solution in `./bean.js`.
+
+Once you have completed the specifications in the book,
+
+1.  Prepare your solution so the test runner can see it. Modify `countBs` and
+    `countChar` to make them members of the `Exer` object.
+
+2.  Create a function called `countCharX` (that is also a member of Exer) that
+    accepts one parameter (e.g. `char`) and returns a function that counts the
+    number of `char`s that appear in a given string argument.
