@@ -4,13 +4,15 @@ Welcome to *Eloquent JavaScript*, Chapter 3!
 
 These are the instructions for the exercises in Chapter 3. Render them in
 Mardown for maximum readablility. Remember that all your work will be done in
-the `./exercises.js` file, and you can check your work by running
+the `./index.js` file, and you can check your work by running
 
     $ ywca test chapter03 --color | less
 
 from your `ywebca` directory. When all your tests are green, run
 
-    $ ywca test chapter03 > check.txt
+    $ hostname > check.txt
+    $ pwd >> check.txt
+    $ ywca test chapter03 >> check.txt
 
 and attach `check.txt` to the appropriate card on Trello.
 
@@ -180,7 +182,7 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
 
 };</pre>
         <p>
-          This code also appears in <code>./exercises.js</code>. You may find
+          This code also appears in <code>./index.js</code>. You may find
           the syntax highlighting helpful.
         </p>
       </td>
@@ -277,7 +279,7 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
 
 };</pre>
         <p>
-          This code also appears in <code>./exercises.js</code>. You may find
+          This code also appears in <code>./index.js</code>. You may find
           the syntax highlighting helpful.
         </p>
       </td>
@@ -403,7 +405,8 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
 
 These exercises correspond to [this section of the text](http://eloquentjavascript.net/03_functions.html#c_wm1DV2942b).
 
-You are given your very own pancake flipping robot named `jack`. He can make pancakes with his two spatula arms and hold warm pancakes on a plate on
+You are given your very own pancake flipping robot named `jack`. He can make
+pancakes with his two spatula arms and hold warm pancakes on a plate on
 his head.
 
 Jack responds to two oddly-named commands: `push()` and `pop()`. When you tell
@@ -533,38 +536,47 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
     <tr>
       <th>Closures 1</th>
       <td>
-        Your project manager tells you that your function spaceCubeDetector has been a
-        great boon to the company and is producing value hand over fist. However,
-        the department in charge of producing heights takes twice as long as the
-        as either of the departments for length or width. The department in charge
-        of running spaceCubeDetector is getting held up while waiting for heights to
-        come in. Your project manager would like it if the length and width could
-        be entered seperately from the height.
-
-        Create a new version of spaceCubeDetector that takes a length and a width and
-        returns another function. The function spaceCubeDetector returns should take
-        a height and return the string "SPACE CUBE DETECTED!!" when length, width, and
-        height are the same and the string "THIS IS NO SPACE CUBE!" when they do not.
-
-        Return the new spaceCubeDetector.
+        <p>
+          Your project manager tells you that your function
+          <code>spaceCubeDetector</code> has been a great boon to the company
+          and is producing value hand over fist. However, the department in
+          charge of producing heights takes twice as long as the as either of
+          the departments for length or width. The department in charge of
+          running <code>spaceCubeDetector</code> is getting held up while
+          waiting for heights to come in. Your project manager would like it if
+          the length and width could be entered seperately from the height.
+        </p>
+        <p>
+          Create a new version of spaceCubeDetector that takes a length and a
+          width and returns another function. The function spaceCubeDetector
+          returns should take a height and return the string <code>SPACE CUBE
+          DETECTED!!</code> when length, width, and height are the same and the
+          string <code>THIS IS NO SPACE CUBE!</code> when they do not.
+        </p>
+        <p>Return the new <code>spaceCubeDetector</code>.</p>
       </td>
     </tr>
     <tr>
       <th>Closures 2</th>
       <td>
-        Your project manager loves the changes you made, however, the llamas
-        responsible for opperating spaceCubeDetector have been sacked. The management
-        would like to change the workflow for spaceCubeDetector such that the
-        spaceCubeDetector fuction will be sent to the length department, who will then
-        pass a function to the width department, who in turn will pass a function to 
-        the height department. The height department will in turn, when the get to it,
-        pass the results tot he relevant llamas.
-
-        Your job in all of this is to make spaceCubeDetector into a function that
-        takes a length and returns a function that takes a width and returns a function
-        that takes a height and returns the normal results for spaceCubeDetector.
-
-        Return the new spaceCubeDetector.
+        <p>
+          Your project manager loves the changes you made, however, the llamas
+          responsible for opperating <code>spaceCubeDetector</code> have been
+          sacked. The management would like to change the workflow for
+          <code>spaceCubeDetector</code> such that the
+          <code>spaceCubeDetector</code> fuction will be sent to the length
+          department, who will then pass a function to the width department,
+          who, in turn, will pass a function to the height department. The
+          height department will, in turn (when they get to it), pass the
+          results to the relevant llamas.
+        </p>
+        <p>
+          Your job in all of this is to make <code>spaceCubeDetector</code> into
+          a function that takes a length and returns a function that takes a
+          width and returns a function that takes a height and returns the
+          normal results for <code>spaceCubeDetector</code>.
+        </p>
+        <p>Return the new <code>spaceCubeDetector</code>.</p>
       </td>
     </tr>
   </tbody>

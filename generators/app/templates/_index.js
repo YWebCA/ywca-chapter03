@@ -7,29 +7,39 @@
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
+//==============================//
+Exer.defining1 = function () {  //
+//==============================//
 
-Exer.defining1 = function () {
 
-}
+
+};  // end Exer.defining1
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
 // `myLog` should accept one parameter named `message`.
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
+//==============================//
+Exer.defining2 = function () {  //
+//==============================//
 
-Exer.defining2 = function () {
-  
-}
+
+
+};  // end Exer.defining2
 
 /******************************    DEFINING 3    ******************************/
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
+//==============================//
+Exer.defining3 = function () {  //
+//==============================//
 
-Exer.defining3 = function () {
-  
-}
+
+
+};  // end Exer.defining3
+
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
@@ -40,8 +50,9 @@ Exer.defining3 = function () {
 // When its length, width, and height are all equal, `spaceCubeDetector` should
 //     return the correct string, otherwise the other string.
 // `parameters1` should return `spaceCubeDetector`
-
-Exer.parameters1 = function() {
+//===============================//
+Exer.parameters1 = function() {  //
+//===============================//
 
 
 
@@ -61,7 +72,7 @@ Exer.parameters2 = function(spaceCubeDetector) {  //
 
 
 
-};  // wrapper end
+};  // Exer.parameters2
 
 //===============================    SCOPE    ================================//
 //  For Scope exercises 1-5, read through the following code and find the     //
@@ -265,7 +276,7 @@ Exer.values1 = function ( volume, spaceCubeDetector ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.values1
 
 /******************************    Values 2    ********************************/
 // Assign a new function to `volume` that takes a length, a width, and a height
@@ -277,15 +288,15 @@ Exer.values2 = function ( volume ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.values2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
 /****************************    DECLARATION 1    *****************************/
-// Use declaration notation to declare a function called `testNinja` that has no
-//     parameters
+// Use declaration notation to declare a function called `testNinja` that has
+//     no parameters
 // `testNinja` should log the string "You gotta believe!"
 // Return `testNinja` from `Exer.declaration1`
 //=================================//
@@ -294,7 +305,7 @@ Exer.declaration1 = function () {  //
 
 
 
-};
+};  // end Exer.declaration1
 
 /****************************    DECLARATION 2    *****************************/
 // 1. Call a function called `trainNinja` with the argument "punch"
@@ -308,7 +319,7 @@ Exer.declaration2 = function () {  //
 
 
 
-};  // wrapper end
+};  // edn Exer.declaration2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    The Call Stack    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -328,7 +339,7 @@ Exer.stack1 = function ( jack ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.stack1
 
 /*******************************    STACK 2    ********************************/
 // Jack already has three pancakes warming on his plate: `apple`, `banana`,
@@ -348,63 +359,51 @@ Exer.stack2 = function ( jack ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.stack2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Closures   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
 /*******************************    Closures 1    *******************************/
-// Your project manager tells you that your function spaceCubeDetector has been a
-// great boon to the company and is producing value hand over fist. However,
-// the department in charge of producing heights takes twice as long as the
-// as either of the departments for length or width. The department in charge
-// of running spaceCubeDetector is getting held up while waiting for heights to
-// come in. Your project manager would like it if the length and width could
-// be entered seperately from the height.
-// Create a new version of spaceCubeDetector that takes a length and a width and
-// returns another function. The function spaceCubeDetector returns should take
-// a height and return the string "SPACE CUBE DETECTED!!" when length, width, and
-// height are the same and the string "THIS IS NO SPACE CUBE!" when they do not.
-// Return the new spaceCubeDetector.
-//=================================//
-Exer.closures1 = function(spaceCubeDetector) {
+// Create a new version of `spaceCubeDetector` that takes a length and a width
+// and returns another function. The function 1spaceCubeDetector1 returns should
+// take a height and return the string "SPACE CUBE DETECTED!!" when length,
+// width, and height are the same and the string "THIS IS NO SPACE CUBE!" when
+// they do not. Return the new spaceCubeDetector.
+//===============================================//
+Exer.closures1 = function (spaceCubeDetector) {  //
+//===============================================//
 
-}
+
+
+};  // end Exer.closures1
 
 /*******************************    Closures 2    *******************************/
-// Your project manager loves the changes you made, however, the llamas
-// responsible for opperating spaceCubeDetector have been sacked. The management
-// would like to change the workflow for spaceCubeDetector such that the
-// spaceCubeDetector fuction will be sent to the length department, who will then
-// pass a function to the width department, who in turn will pass a function to 
-// the height department. The height department will in turn, when the get to it,
-// pass the results tot he relevant llamas.
-// Your job in all of this is to make spaceCubeDetector into a function that
-// takes a length and returns a function that takes a width and returns a function
-// that takes a height and returns the normal results for spaceCubeDetector.
-// Return the new spaceCubeDetector.
-//=================================//
-Exer.closures1 = function(spaceCubeDetector) {
+// Make `spaceCubeDetector` into a function that takes a length and returns a
+// function that takes a width and returns a function that takes a height and
+// returns the normal results for `spaceCubeDetector`. Return the
+// new `spaceCubeDetector`.
+//===============================================//
+Exer.closures1 = function (spaceCubeDetector) {  //
+//===============================================//
 
-}
+
+
+};  // end Exer.closures2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Recursion    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Growing Functions    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Nate
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^    Functions and Side Effects    ^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
