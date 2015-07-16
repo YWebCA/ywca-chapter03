@@ -504,7 +504,18 @@ describe("Closure exercises", function() {
 /******************************    Recursion    *******************************/
 // Annalise
 describe("Recursion exercises", function() {
-  it("should test a thing");
+  describe("Recursion 1", function() {
+    beforeAll(function() {
+      Exer.recursion1(Exer.code, Exer.controller);
+    })
+    it("should test a thing");
+  });
+  describe("Recursion 2", function() {
+    beforeAll(function() {
+      Exer.recursion1(Exer.code, Exer.controller);
+    })
+    it("should test a thing");
+  });
 });
 
 /**************************    Growing Functions    ***************************/

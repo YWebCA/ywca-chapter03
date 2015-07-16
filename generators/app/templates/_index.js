@@ -353,58 +353,141 @@ Exer.stack2 = function ( jack ) {  //
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
+
+/*******************************    Optional 1    *******************************/
+// Create a function that takes two parameters and return it.
+//=================================//
+Exer.optional1 = function() {
+
+};
+
+/*******************************    Optional 2    *******************************/
+// Call the function value we pass back to you with 4 arguments.
+//=================================//
+Exer.optional2 = function(exercise) {
+
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Closures   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
 /*******************************    Closures 1    *******************************/
-// Your project manager tells you that your function spaceCubeDetector has been a
-// great boon to the company and is producing value hand over fist. However,
-// the department in charge of producing heights takes twice as long as the
-// as either of the departments for length or width. The department in charge
-// of running spaceCubeDetector is getting held up while waiting for heights to
-// come in. Your project manager would like it if the length and width could
-// be entered seperately from the height.
-// Create a new version of spaceCubeDetector that takes a length and a width and
-// returns another function. The function spaceCubeDetector returns should take
-// a height and return the string "SPACE CUBE DETECTED!!" when length, width, and
-// height are the same and the string "THIS IS NO SPACE CUBE!" when they do not.
-// Return the new spaceCubeDetector.
+// 1.) Create a new version of `spaceCubeDetector` that takes a length and a width.
+// 2.) Make `spaceCubeDetector` return another function.
+// 3.) The function spaceCubeDetector returns should take a height
+// 4.) and return the string "SPACE CUBE DETECTED!!" when length, width, and
+// height are the same and the string "THIS IS NO SPACE CUBE!" when they are not.
+// 5.) Return the new spaceCubeDetector.
 //=================================//
 Exer.closures1 = function(spaceCubeDetector) {
 
-}
+};
 
 /*******************************    Closures 2    *******************************/
-// Your project manager loves the changes you made, however, the llamas
-// responsible for opperating spaceCubeDetector have been sacked. The management
-// would like to change the workflow for spaceCubeDetector such that the
-// spaceCubeDetector fuction will be sent to the length department, who will then
-// pass a function to the width department, who in turn will pass a function to 
-// the height department. The height department will in turn, when the get to it,
-// pass the results tot he relevant llamas.
-// Your job in all of this is to make spaceCubeDetector into a function that
-// takes a length and returns a function that takes a width and returns a function
+// 1.) Make spaceCubeDetector into a function that takes a length.
+// 2.) Make spaceCubeDetector into a function returns a function.
+// 3.) Make spaceCubeDetector's returned function take a width
+// 4.) Make spaceCubeDetector's returned function returns a function
 // that takes a height and returns the normal results for spaceCubeDetector.
-// Return the new spaceCubeDetector.
+// 5.) Return the new spaceCubeDetector.
 //=================================//
 Exer.closures1 = function(spaceCubeDetector) {
 
-}
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Recursion    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
+
+/*******************************    Recursion 1    *******************************/
+//
+//=================================//
+Exer.recursion1 = function(code, puzzleBox) {
+};
+
+/*******************************    Recursion 2   *******************************/
+// 1.) We'll use a recursive function that calls `puzzleBox.click` and stores its
+// returned function value.
+// 2.) If `puzzleBox.click` returns `undefined` instead of a function value the
+// function will just end.
+// 3.) Otherwise, call the recursive function again with `puzzleBox` as a
+// parameter then call `puzzleBox.click`'s returned function value.
+//=================================//
+Exer.recursion2 = function(code, puzzleBox) {
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Growing Functions    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Nate
+
+
+/*******************************    Growing 1   *******************************/
+// Reduce the following code by placing repetitive code into a reusable function.
+//=================================//
+
+Exer.growing1 = function (pigPenSide, chickenPenSide, sheepPenSide) {
+
+  var pigPenSize = pigPenSide * pigPenSide;
+  var pigs = 'pigs';
+  console.log("The " + pigs + " need " + pigPenSize + "sq. ft.");
+  var chickenPenSize = chickenPenSide * chickenPenSide;
+  var chickens = 'chickens';
+  console.log("The " + chickens + " need " + chickenPenSize + "sq. ft.");
+  var sheepPenSize = sheepPenSide * sheepPenSide;
+  var sheeps = 'sheep';
+  console.log("The " + sheeps + " need " + sheepPenSize + "sq. ft.");
+
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^    Functions and Side Effects    ^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
-// Annalise
+
+/*******************************    Side Effects   *******************************/
+// Given the following code example follow the instructions for side effects 1 & 2.
+//=================================//
+
+Exer.sideEffectExample = function() {
+  var myBark = 'arf!';
+
+  getBarkNoise = function () {
+    return myBark();
+  };
+
+  setBarkNoise = function (bark) {
+    ;myBark = bark;
+  }
+
+  bark = console.log (bark, times) {
+    var min = 0;
+    var max = times;
+
+    for (var index = min; index < max; index++)
+      console.log(bark);
+  };
+
+  pairsOfLegsToTotalLegs = function (pairs) {
+    return pairs * 2;
+  };
+
+  hasTail = function () {
+    return true;
+  };
+
+};
+
+
+/*******************************    Side Effects 1  *******************************/
+// Make a call to each function in the code example that is a pure function.
+//=================================//
+
+Exer.sideEffect1 = function() {
+};
+
+/*******************************    Side Effects 2  *******************************/
+// Make a call to each function in the code example that is not a pure function.
+//=================================//
+
+Exer.sideEffect2 = function() {
+};

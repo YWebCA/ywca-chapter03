@@ -24,6 +24,42 @@ if ( weAreInNode() ) {
 
 // Provided Resources for Chapter Exercises
 
-global.Exer = {
-  spaceCubeDetector: null
-};
+(function () {
+  var codeIndex = 0;
+
+  global.Exer = {
+    spaceCubeDetector: null,
+    code: ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'B', 'A', 'select', 'start'],
+    controller: function (code) {
+      console.log('Key Pressed: ' + code);
+      if (code == Exer.code[codeIndex++])
+        return true;
+      else
+        return false;
+    }
+  }
+})();
+
+(function () {
+
+  var codeIndex = 0;
+
+  Exer.code.curr = function() {
+    return Exer.code[codeIndex];
+  };
+  Exer.code.next = function() {
+    if (codeIndex + 1 < Exer.code.length) {
+      return Exer.code[++codeIndex];
+    } else {
+      return undefined;
+    }
+  };
+  Exer.code.prev = function() {
+    if (codeIndex - 1 > 0) {
+      return Exer.code[--codeIndex];
+    } else {
+      return undefined;
+    }
+  };
+
+})();

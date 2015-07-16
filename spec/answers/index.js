@@ -453,8 +453,75 @@ Exer.closures2 = function(spaceCubeDetector) {
   return spaceCubeDetector
 }
 
-/******************************    Recursion    *******************************/
-// Annalise
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Recursion    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
+
+/*******************************    Recursion 1    *******************************/
+// The AI department is developing a system to beat the game Contra for the
+// Nintendo Entertainment System. The AI they've built is not very good. Your
+// project manager a code that can be entered into the game to increase the AI's
+// chances of beating the game. You are given the code and a virtual controller.
+// 
+// Create a function to add to the AI that accepts `code` and `controller`.
+// 
+// `code` is given as an object that contains a sequence of strings accessed through
+// a `next`, `last`, and `curr`. `next` changes the current item of the sequence to
+// the next. `last` changes the current item of the sequence to the last. `next`
+// and `last` return the current item on success and undefined on fail. `curr`
+// returns the current item in the sequence.
+//
+// 'controller' accepts a string. When it recives the correct string for a sequence
+// and is ready to receive another string in the sequence
+//
+// Note: The AI does not have access to for or while loops
+//
+//=================================//
+Exer.recursion1 = function(code, controller) {
+  function thirtyGuys(code, controller) {
+    controller(code.curr())
+    if (code.next())
+      thirtyGuys(code, controller);
+  }
+  thirtyGuys(code, controller);
+}
+
+/*******************************    Recursion 2    *******************************/
+// The neckbeards in archival found a puzzle box and want to see what it does.
+// They've hooked it up to the mainframe and provided a JavaScript interface. They
+// would like you to remotely open it, not that they think puzzle boxes can be
+// dangerous.
+// 
+// There are two things you can do to the puzzle box: click it and twist it. For
+// each time it is clicked it can be twisted. To solve the puzzle box it must be
+// clicked until it won't click anymore. Then it must be twisted for each time it
+// was clicked.
+//
+// `puzzleBox` has a function `click` that, when called, returns a function value or
+// `undefined` when it is out of functions. The returned function values can be called
+// to twist `puzzleBox`.
+//
+// To solve `puzzleBox`, you must call the function values `click` returns in reverse
+// order. To do this call `click` until it returns `undefined`. Then call each
+// function value `click` returned.
+// 
+// We'll use a recursive function that calls `puzzleBox.click` and stores its
+// returned function value. If `puzzleBox.click` returns `undefined` instead of
+// a function value the function will just end. Otherwise, call the recursive function
+// again with `puzzleBox` as a parameter then call `puzzleBox.click`'s returned
+// function value.
+//
+//=================================//
+Exer.recursion2 = function(puzzleBox) {
+  function puzzler(puzzleBox) {
+    var result = puzzleBox.click();
+    if (result) { 
+      puzzler(puzzleBox);
+      result();
+    }
+  }
+  puzzler(puzzleBox)
+}
 
 /**************************    Growing Functions    ***************************/
 // Nate
