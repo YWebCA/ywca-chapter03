@@ -7,18 +7,22 @@
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
+//==============================//
+Exer.defining1 = function () {  //
+//==============================//
 
-Exer.defining1 = function () {
   var three = function () { return 3; };
-}
+
+};  // end Exer.defining
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
 // `myLog` should accept one parameter named `message`.
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
-
-Exer.defining2 = function () {
+//==============================//
+Exer.defining2 = function () {  //
+//==============================//
   var myLog = function ( message ) {
     console.log( "The Log Says: " + message );
   };
@@ -28,14 +32,15 @@ Exer.defining2 = function () {
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
-
-Exer.defining3 = function () {
+//==============================//
+Exer.defining3 = function () {  //
+//==============================//
   var square = function ( number ) {
     number *= number;
     console.log( number );
     return number;
   };
-}
+}  // end Exer.defining3
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -47,9 +52,9 @@ Exer.defining3 = function () {
 // When its length, width, and height are all equal, `spaceCubeDetector` should
 //     return the correct string, otherwise the other string.
 // `parameters1` should return `spaceCubeDetector`
-
-Exer.parameters1 = function() {
-
+//===============================//
+Exer.parameters1 = function() {  //
+//===============================//
   var spaceCubeDetector = function ( length, width, height ) {
     if ( length === width && length === height && length !== null ) {
       return "SPACE CUBE DETECTED!!";

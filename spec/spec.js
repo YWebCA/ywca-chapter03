@@ -4,7 +4,8 @@ describe("Defining a Function exercises", function() {
 
   describe("Defining 1", function() {
     beforeAll(function() {
-      this.functionDefinition = Exer.defining1.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+      this.functionDefinition = Exer.defining1.toString().replace(/\/\/.*$/gm,'').replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+      console.log(this.functionDefinition);
     });
     it("should define a function named three", function () {
       expect( this.functionDefinition ).toMatch( /^\s*var\s+three\s*=\s*function/m );
@@ -16,7 +17,7 @@ describe("Defining a Function exercises", function() {
 
   describe("Defining 2", function() {
     beforeAll(function() {
-      this.functionDefinition = Exer.defining2.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+      this.functionDefinition = Exer.defining2.toString().replace(/\/\/.*$/gm,'').replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
     });
     it("should define a function named myLog", function () {
       expect( this.functionDefinition.toString() ).toMatch( /^\s*var\s+myLog\s*=\s*function/m );
@@ -35,7 +36,7 @@ describe("Defining a Function exercises", function() {
 
   describe("Defining 3", function() {
     beforeAll(function() {
-      this.functionDefinition = Exer.defining3.toString().replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
+      this.functionDefinition = Exer.defining3.toString().replace(/\/\/.*$/gm,'').replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
     });
 
     describe( "Structure", function () {
