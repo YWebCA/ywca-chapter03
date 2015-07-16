@@ -7,29 +7,39 @@
 /******************************    DEFINING 1    ******************************/
 // Use a function expression to define a function named `three`.
 // That function should return the value 3.
+//==============================//
+Exer.defining1 = function () {  //
+//==============================//
 
-Exer.defining1 = function () {
 
-}
+
+};  // end Exer.defining1
 
 /******************************    DEFINING 2    ******************************/
 // Use a function expression to define a function named `myLog`.
 // `myLog` should accept one parameter named `message`.
 // `myLog` should output `message` to the console with the appropriate
 //     formatting.
+//==============================//
+Exer.defining2 = function () {  //
+//==============================//
 
-Exer.defining2 = function () {
-  
-}
+
+
+};  // end Exer.defining2
 
 /******************************    DEFINING 3    ******************************/
 // Use a function expression to define a function named `square`.
 // `square` should accept one parameter named `number`.
 // The function should square the number and both log and return the result.
+//==============================//
+Exer.defining3 = function () {  //
+//==============================//
 
-Exer.defining3 = function () {
-  
-}
+
+
+};  // end Exer.defining3
+
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^    Parameters and Scopes    ^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
@@ -40,8 +50,9 @@ Exer.defining3 = function () {
 // When its length, width, and height are all equal, `spaceCubeDetector` should
 //     return the correct string, otherwise the other string.
 // `parameters1` should return `spaceCubeDetector`
-
-Exer.parameters1 = function() {
+//===============================//
+Exer.parameters1 = function() {  //
+//===============================//
 
 
 
@@ -61,7 +72,7 @@ Exer.parameters2 = function(spaceCubeDetector) {  //
 
 
 
-};  // wrapper end
+};  // Exer.parameters2
 
 //===============================    SCOPE    ================================//
 //  For Scope exercises 1-5, read through the following code and find the     //
@@ -265,7 +276,7 @@ Exer.values1 = function ( volume, spaceCubeDetector ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.values1
 
 /******************************    Values 2    ********************************/
 // Assign a new function to `volume` that takes a length, a width, and a height
@@ -277,15 +288,15 @@ Exer.values2 = function ( volume ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.values2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^    Declaration Notation    ^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
 /****************************    DECLARATION 1    *****************************/
-// Use declaration notation to declare a function called `testNinja` that has no
-//     parameters
+// Use declaration notation to declare a function called `testNinja` that has
+//     no parameters
 // `testNinja` should log the string "You gotta believe!"
 // Return `testNinja` from `Exer.declaration1`
 //=================================//
@@ -294,7 +305,7 @@ Exer.declaration1 = function () {  //
 
 
 
-};
+};  // end Exer.declaration1
 
 /****************************    DECLARATION 2    *****************************/
 // 1. Call a function called `trainNinja` with the argument "punch"
@@ -308,7 +319,7 @@ Exer.declaration2 = function () {  //
 
 
 
-};  // wrapper end
+};  // edn Exer.declaration2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    The Call Stack    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -328,7 +339,7 @@ Exer.stack1 = function ( jack ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.stack1
 
 /*******************************    STACK 2    ********************************/
 // Jack already has three pancakes warming on his plate: `apple`, `banana`,
@@ -348,7 +359,7 @@ Exer.stack2 = function ( jack ) {  //
 
 
 
-};  // wrapper end
+};  // end Exer.stack2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
