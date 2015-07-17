@@ -6,7 +6,7 @@ var yosay = require('yosay');
 module.exports = yeoman.generators.Base.extend({
 
   paths: function () {
-    this.destinationRoot('chapter02');
+    this.destinationRoot('chapter03');
   },
 
   writing: {
@@ -29,7 +29,7 @@ module.exports = yeoman.generators.Base.extend({
       )
       this.fs.copy(
         this.templatePath('_minimum.js'),
-        this.destinationPath('triangle.js')
+        this.destinationPath('minimum.js')
       )
       this.fs.copy(
         this.templatePath('_recursion.js'),

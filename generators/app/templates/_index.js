@@ -470,7 +470,7 @@ Exer.sideEffectExample = function() {
     ;myBark = bark;
   }
 
-  bark = console.log (bark, times) {
+  bark = function (bark, times) {
     var min = 0;
     var max = times;
 
