@@ -23,20 +23,20 @@ if ( weAreInNode() ) {
 
 
 // Provided Resources for Chapter Exercises
+(function (){
+  global.Exer.spaceCubeDetector = function() {};
+})();
 
 (function () {
   var codeIndex = 0;
 
-  global.Exer = {
-    spaceCubeDetector: null,
-    code: ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'B', 'A', 'select', 'start'],
-    controller: function (code) {
-      console.log('Key Pressed: ' + code);
-      if (code == Exer.code[codeIndex++])
-        return true;
-      else
-        return false;
-    }
+  global.Exer.code = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'B', 'A', 'select', 'start'],
+  global.Exer.controller = function (code) {
+    console.log('Key Pressed: ' + code);
+    if (code == Exer.code[codeIndex++])
+      return true;
+    else
+      return false;
   }
 })();
 
@@ -63,3 +63,40 @@ if ( weAreInNode() ) {
   };
 
 })();
+
+(function () {
+  var clickTarget = 8;
+  var clickCount = 0;
+
+  global.Exer.puzzleBox = {}
+  global.Exer.puzzleBox.setClickTarget = function (target) {
+    clickTarget = target;
+  };
+  global.Exer.puzzleBox.twist = function() {
+    if (--clickCount === 0)
+      console.log("\"We have such sights to show you...\"");
+    else if (clickCount < 0)
+      console.log("The puzzlebox resists your attempt.");
+    else
+      console.log("The puzzlebox turns.");
+  };
+  global.Exer.puzzleBox.click = function() {
+    if (++clickCount < clickTarget) {
+      console.log("The puzzlebox clicks.");
+      return Exer.puzzleBox.twist;
+    } else if (clickCount > clickTarget) {
+      console.log("The puzzlebox resists your attempt.");
+      return null;
+    } else {
+      --clickCount;
+      console.log("The puzzlebox is free to be twisted.");
+      return undefined;
+    }
+  };
+})();
+
+global.bark = function() {};
+global.pairsOfLegsToTotalLegs = function() {};
+global.hasTail = function() {};
+global.getBarkNoise = function() {};
+global.setBarkNoise = function() {};

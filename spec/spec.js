@@ -456,7 +456,20 @@ describe("The Call Stack exercises", function() {
 /**************************    Optional Arguments    **************************/
 // Annalise
 describe("Optional Arguments exercises", function() {
-  it("should test a thing");
+  describe("Optional 1", function() {
+    it("should return a function that has 4 parameters", function() {
+      this.result = Exer.optional1();
+      expect( this.result.length ).toEqual(2);
+    });
+  });
+  describe("Optional 2", function() {
+    it("should call a given function with 4 arguments", function() {
+      this.result = this.result || function() {};
+      spyOn(this, "result").and.callThrough();
+      Exer.optional2(this.result);
+      expect( this.result.calls.mostRecent().args.length ).toEqual(4)
+    });
+  });
 });
 
 /*******************************    Closure    ********************************/
@@ -507,26 +520,84 @@ describe("Closure exercises", function() {
 describe("Recursion exercises", function() {
   describe("Recursion 1", function() {
     beforeAll(function() {
+      spyOn(Exer, 'controller').and.callThrough();
       Exer.recursion1(Exer.code, Exer.controller);
     })
-    it("should test a thing");
+    it("should not have a loop", function() {
+      expect( Exer.recursion1.toString() ).not.toMatch(/for\s?\(/);
+      expect( Exer.recursion1.toString() ).not.toMatch(/while\s?\(/);
+    });
+    it("should have the call to controller written only once", function() {
+      expect( Exer.recursion1.toString().match(/controller\s?\(/g).length ).toEqual(1);
+    });
+    it("should call controller with each part of the code", function() {
+      expect( Exer.controller.calls.allArgs() ).toEqual([["up"],["up"],["down"],["down"],["left"],["right"],["left"],["right"],["B"],["A"],["select"],["start"]])
+    });
   });
   describe("Recursion 2", function() {
     beforeAll(function() {
-      Exer.recursion1(Exer.code, Exer.controller);
+      spyOn(Exer.puzzleBox, "click").and.callThrough();
+      spyOn(Exer.puzzleBox, "twist").and.callThrough();
+      Exer.recursion2(Exer.puzzleBox);
     })
-    it("should test a thing");
+    it("should call click # times", function() {
+      expect( Exer.puzzleBox.click.calls.count() ).toEqual(8);
+    });
+    it("should call twist # times", function() {
+      expect( Exer.puzzleBox.twist.calls.count() ).toEqual(7);
+    });
   });
 });
 
 /**************************    Growing Functions    ***************************/
 // Nate
 describe("Growing Functions exercises", function() {
-  it("should test a thing");
+  describe("Growing 1", function() {
+    beforeAll(function() {
+      spyOn(console, "log").and.callThrough();
+      Exer.growing1(2,4,3);
+    });
+    it("should have the call to console.log written only once", function() {
+      expect( Exer.growing1.toString().match(/console.log\(/mg).length ).toEqual(1);
+    });
+    it("should not have its logs changed", function() {
+      expect( console.log.calls.allArgs() ).toEqual([["The pigs need 4sq. ft."], ["The chickens need 16sq. ft."], ["The sheep need 9sq. ft."]]);
+    });
+  });
 });
 
 /**********************    Functions and Side Effects    **********************/
 // Annalise
 describe("Functions and Side Effects exercises", function() {
-  it("should test a thing");
+  beforeEach(function() {
+    global.bark = jasmine.createSpy("bark");
+    global.pairsOfLegsToTotalLegs = jasmine.createSpy("pairsOfLegsToTotalLegs");
+    global.hasTail = jasmine.createSpy("hasTail");
+    global.getBarkNoise = jasmine.createSpy("getBarkNoise");
+    global.setBarkNoise = jasmine.createSpy("setBarkNoise");
+  });
+  describe("Side Effects 1",function() {
+    it("should call the functions that are pure", function() {
+      Exer.sideEffect1();
+      expect( global.pairsOfLegsToTotalLegs ).toHaveBeenCalled();
+      expect( global.hasTail ).toHaveBeenCalled();
+    });
+    it("should not call the functions that are not pure", function() {
+      expect( global.bark ).not.toHaveBeenCalled();
+      expect( global.getBarkNoise ).not.toHaveBeenCalled();
+      expect( global.setBarkNoise ).not.toHaveBeenCalled();
+    });
+  });
+  describe("Side Effects 2",function() {
+    it("should call the functions that are not pure", function() {
+      Exer.sideEffect2();
+      expect( bark.calls.count() ).toBeGreaterThan(0);
+      expect( getBarkNoise.calls.count() ).toBeGreaterThan(0);
+      expect( setBarkNoise.calls.count() ).toBeGreaterThan(0);
+    });
+    it("should not call the functions that are pure", function() {
+      expect( pairsOfLegsToTotalLegs.calls.count() ).not.toBeGreaterThan(0);
+      expect( hasTail.calls.count() ).not.toBeGreaterThan(0);
+    });
+  });
 });

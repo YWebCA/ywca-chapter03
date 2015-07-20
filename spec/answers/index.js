@@ -396,8 +396,23 @@ Exer.stack2 = function ( jack ) {  //
 
 };  // wrapper end
 
-/**************************    Optional Arguments    **************************/
-// Annalise
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
+
+/*******************************    Optional 1    *******************************/
+// Create a function that takes two parameters and return it.
+//=================================//
+Exer.optional1 = function() {
+  return function (one, two) { return one + two; };
+};
+
+/*******************************    Optional 2    *******************************/
+// Call the function value we pass back to you with 4 arguments.
+//=================================//
+Exer.optional2 = function(exercise) {
+  exercise(1,2,3,4);
+};
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Closures   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -484,7 +499,7 @@ Exer.closures2 = function(spaceCubeDetector) {
 //=================================//
 Exer.recursion1 = function(code, controller) {
   function thirtyGuys(code, controller) {
-    controller(code.curr())
+    controller(code.curr());
     if (code.next())
       thirtyGuys(code, controller);
   }
@@ -528,8 +543,80 @@ Exer.recursion2 = function(puzzleBox) {
   puzzler(puzzleBox)
 }
 
-/**************************    Growing Functions    ***************************/
-// Nate
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Growing Functions    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
 
-/**********************    Functions and Side Effects    **********************/
-// Annalise
+
+/*******************************    Growing 1   *******************************/
+// Reduce the following code by placing repetitive code into a reusable function.
+//=================================//
+
+Exer.growing1 = function (pigPenSide, chickenPenSide, sheepPenSide) {
+
+  var logPen = function(animal, penSide) {
+    console.log("The " + animal + " need " + penSide * penSide + "sq. ft.");
+  };
+
+  logPen("pigs", pigPenSide);
+  logPen("chickens", chickenPenSide);
+  logPen("sheep", sheepPenSide);
+
+};
+
+/*******************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^    Functions and Side Effects    ^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************************************/
+
+/*******************************    Side Effects   *******************************/
+// Given the following code example follow the instructions for side effects 1 & 2.
+//=================================//
+
+Exer.sideEffectExample = function() {
+  var myBark = 'arf!';
+
+  getBarkNoise = function () {
+    return myBark();
+  };
+
+  setBarkNoise = function (bark) {
+    myBark = bark;
+  }
+
+  bark = function (bark, times) {
+    var min = 0;
+    var max = times;
+
+    for (var index = min; index < max; index++)
+      console.log(bark);
+  };
+
+  pairsOfLegsToTotalLegs = function (pairs) {
+    return pairs * 2;
+  };
+
+  hasTail = function () {
+    return true;
+  };
+
+};
+
+
+/*******************************    Side Effects 1  *******************************/
+// Make a call to each function in the code example that is a pure function.
+//=================================//
+
+Exer.sideEffect1 = function() {
+  pairsOfLegsToTotalLegs();
+  hasTail();
+};
+
+/*******************************    Side Effects 2  *******************************/
+// Make a call to each function in the code example that is not a pure function.
+//=================================//
+
+Exer.sideEffect2 = function() {
+  bark();
+  getBarkNoise();
+  setBarkNoise();
+};
