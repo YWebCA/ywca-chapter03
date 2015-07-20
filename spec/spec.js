@@ -5,7 +5,6 @@ describe("Defining a Function exercises", function() {
   describe("Defining 1", function() {
     beforeAll(function() {
       this.functionDefinition = Exer.defining1.toString().replace(/\/\/.*$/gm,'').replace(/\n/g,'').replace(/}}|};}/, '};').replace(/function\s+\(\)\s+\{/, '');
-      console.log(this.functionDefinition);
     });
     it("should define a function named three", function () {
       expect( this.functionDefinition ).toMatch( /^\s*var\s+three\s*=\s*function/m );
