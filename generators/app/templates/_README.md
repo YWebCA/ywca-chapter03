@@ -633,8 +633,17 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
         </p>
         <p>
           <code>controller</code> accepts a string. When it recives the correct
-          string for a sequence and is ready to receive another string in
-          the sequence TODO! THIS IS NOT FINISHED!
+          string for a sequence and is ready to receive another string in the
+          sequence it will return <code>true</code> it will otherwise return
+          <code>false</code>.
+        </p>
+        <p>
+          Create a recursive function that accepts a code and contoller. It
+          should send the current code item in the sequence to controller. After
+          sending the item, check if there is another item, and if move code to
+          the next item of the sequence and pass the code and controller to a
+          new call of your recursive function. Finish the exercise by calling
+          your new function with code and controller.
         </p>
         <p>Note: The AI does not have access to for or while loops.</p>
       </td>
