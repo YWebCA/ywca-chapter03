@@ -80,7 +80,7 @@ Exer.parameters2 = function ( spaceCubeDetector ) {  //
 //  as return values for the functions Exer.scope[1-5].                       //
 //============================================================================//
 
-Exer.scopeExample = function() {
+Exer.scopeExample = function () {
 
   var foo = 2;
   var bar = 7;
@@ -319,7 +319,7 @@ Exer.declaration2 = function () {  //
 
 
 
-};  // edn Exer.declaration2
+};  // end Exer.declaration2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    The Call Stack    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
