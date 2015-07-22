@@ -431,16 +431,24 @@ Exer.closures1 = function ( spaceCubeDetector ) {  //
 Exer.recursion1 = function ( code, puzzleBox ) {  //
 //================================================//
 
-/*******************************    Recursion 2   *******************************/
-// 1.) We'll use a recursive function that calls `puzzleBox.click` and stores its
-// returned function value.
-// 2.) If `puzzleBox.click` returns `undefined` instead of a function value the
-// function will just end.
-// 3.) Otherwise, call the recursive function again with `puzzleBox` as a
-// parameter then call `puzzleBox.click`'s returned function value.
-//=================================//
-Exer.recursion2 = function(code, puzzleBox) {
-};
+
+
+};  // end Exer.recursion1
+
+/******************************    Recursion 2   ******************************/
+// 1. Use a recursive function that calls `puzzleBox.click` and stores its
+//    returned function value.
+// 2. If `puzzleBox.click` returns `undefined` instead of a function value, the
+//    function will just end.
+// 3. Otherwise, call the recursive function again with `puzzleBox` as a
+//    parameter. Then call `puzzleBox.click`'s returned function value.
+//==========================================//
+Exer.recursion2 = function ( puzzleBox ) {  //
+//==========================================//
+
+
+
+};  // end Exer.recursion2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Growing Functions    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
