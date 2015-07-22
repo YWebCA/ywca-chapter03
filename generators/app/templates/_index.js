@@ -66,9 +66,9 @@ Exer.parameters1 = function() {  //
 //     return value.
 // Run it once with a length of 1, width of 2, and height of 3 and log its
 //    return value.
-//================================================//
-Exer.parameters2 = function(spaceCubeDetector) {  //
-//================================================//
+//===================================================//
+Exer.parameters2 = function ( spaceCubeDetector ) {  //
+//===================================================//
 
 
 
@@ -365,57 +365,71 @@ Exer.stack2 = function ( jack ) {  //
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^    Optional Arguments    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-/*******************************    Optional 1    *******************************/
+/******************************    Optional 1    ******************************/
 // Create a function that takes two parameters and return it.
-//=================================//
-Exer.optional1 = function() {
+//==============================//
+Exer.optional1 = function () {  //
+//==============================//
 
-};
 
-/*******************************    Optional 2    *******************************/
+
+};  // end Exer.optional1
+
+/******************************    Optional 2    ******************************/
 // Call the function value we pass back to you with 4 arguments.
-//=================================//
-Exer.optional2 = function(exercise) {
+//========================================//
+Exer.optional2 = function ( exercise ) {  //
+//========================================//
 
-};
+
+
+};  // end Exer.optional2
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Closures   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-/*******************************    Closures 1    *******************************/
-// 1.) Create a new version of `spaceCubeDetector` that takes a length and a width.
-// 2.) Make `spaceCubeDetector` return another function.
-// 3.) The function spaceCubeDetector returns should take a height
-// 4.) and return the string "SPACE CUBE DETECTED!!" when length, width, and
-// height are the same and the string "THIS IS NO SPACE CUBE!" when they are not.
-// 5.) Return the new spaceCubeDetector.
-//=================================//
-Exer.closures1 = function(spaceCubeDetector) {
+/******************************    Closures 1    ******************************/
+// 1. Create a new version of `spaceCubeDetector` that takes a length and
+//    a width.
+// 2. Make `spaceCubeDetector` return another function.
+// 3. The function spaceCubeDetector returns should take a height
+// 4. and return the string "SPACE CUBE DETECTED!!" when length, width, and
+//    height are the same and the string "THIS IS NO SPACE CUBE!" when they
+//    are not.
+// 5. Return the new spaceCubeDetector.
+//=================================================//
+Exer.closures1 = function ( spaceCubeDetector ) {  //
+//=================================================//
 
-};
 
-/*******************************    Closures 2    *******************************/
-// 1.) Make spaceCubeDetector into a function that takes a length.
-// 2.) Make spaceCubeDetector into a function returns a function.
-// 3.) Make spaceCubeDetector's returned function take a width
-// 4.) Make spaceCubeDetector's returned function returns a function
-// that takes a height and returns the normal results for spaceCubeDetector.
-// 5.) Return the new spaceCubeDetector.
-//=================================//
-Exer.closures1 = function(spaceCubeDetector) {
 
-};
+};  // end Exer.closures1
+
+/******************************    Closures 2    ******************************/
+// 1. Make spaceCubeDetector into a function that takes a length.
+// 2. Make spaceCubeDetector into a function returns a function.
+// 3. Make spaceCubeDetector's returned function take a width
+// 4. Make spaceCubeDetector's returned function returns a function
+//    that takes a height and returns the normal results for spaceCubeDetector.
+// 5. Return the new spaceCubeDetector.
+//=================================================//
+Exer.closures1 = function ( spaceCubeDetector ) {  //
+//=================================================//
+
+
+
+};  // end Exer.closures1
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Recursion    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-/*******************************    Recursion 1    *******************************/
+/*****************************    Recursion 1    ******************************/
 //
-//=================================//
-Exer.recursion1 = function(code, puzzleBox) {
-};
+//================================================//
+Exer.recursion1 = function ( code, puzzleBox ) {  //
+//================================================//
 
 /*******************************    Recursion 2   *******************************/
 // 1.) We'll use a recursive function that calls `puzzleBox.click` and stores its
@@ -432,12 +446,12 @@ Exer.recursion2 = function(code, puzzleBox) {
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^    Growing Functions    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-
 /*******************************    Growing 1   *******************************/
-// Reduce the following code by placing repetitive code into a reusable function.
-//=================================//
-
-Exer.growing1 = function (pigPenSide, chickenPenSide, sheepPenSide) {
+// Reduce the following code by placing repetitive code into a
+// reusable function.
+//=======================================================================//
+Exer.growing1 = function ( pigPenSide, chickenPenSide, sheepPenSide ) {  //
+//=======================================================================//
 
   var pigPenSize = pigPenSide * pigPenSide;
   var pigs = 'pigs';
@@ -449,15 +463,14 @@ Exer.growing1 = function (pigPenSide, chickenPenSide, sheepPenSide) {
   var sheeps = 'sheep';
   console.log("The " + sheeps + " need " + sheepPenSize + "sq. ft.");
 
-};
+};  // end Exer.growing1
 
 /*******************************************************************************
 ^^^^^^^^^^^^^^^^^^^^^^^    Functions and Side Effects    ^^^^^^^^^^^^^^^^^^^^^^^
 *******************************************************************************/
 
-/*******************************    Side Effects   *******************************/
-// Given the following code example follow the instructions for side effects 1 & 2.
-//=================================//
+// Given the following code example follow the instructions for Side
+// Effects 1 & 2.
 
 Exer.sideEffectExample = function() {
   var myBark = 'arf!';
@@ -489,16 +502,22 @@ Exer.sideEffectExample = function() {
 };
 
 
-/*******************************    Side Effects 1  *******************************/
+/*****************************    Side Effects 1  *****************************/
 // Make a call to each function in the code example that is a pure function.
-//=================================//
+//================================//
+Exer.sideEffect1 = function () {  //
+//================================//
 
-Exer.sideEffect1 = function() {
-};
 
-/*******************************    Side Effects 2  *******************************/
+
+};  // end Exer.sideEffect1
+
+/*****************************    Side Effects 2  *****************************/
 // Make a call to each function in the code example that is not a pure function.
-//=================================//
+//================================//
+Exer.sideEffect2 = function () {  //
+//================================//
 
-Exer.sideEffect2 = function() {
-};
+
+
+};  // end Exer.sideEffect2
