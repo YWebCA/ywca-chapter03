@@ -611,51 +611,69 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
     <tr>
       <th>Recursion 1</th>
       <td>
-        The AI department is developing a system to beat the game Contra for the
-        Nintendo Entertainment System. The AI they've built is not very good. Your
-        project manager a code that can be entered into the game to increase the AI's
-        chances of beating the game. You are given the code and a virtual controller.
-          
-        Create a function to add to the AI that accepts `code` and `controller`.
-          
-        `code` is given as an object that contains a sequence of strings accessed through
-        a `next`, `last`, and `curr`. `next` changes the current item of the sequence to
-        the next. `last` changes the current item of the sequence to the last. `next`
-        and `last` return the current item on success and undefined on fail. `curr`
-        returns the current item in the sequence.
-    
-        'controller' accepts a string. When it recives the correct string for a sequence
-        and is ready to receive another string in the sequence
-    
-        Note: The AI does not have access to for or while loops
+        <p>
+          The AI department is developing a system to beat the game Contra for
+          the Nintendo Entertainment System. The AI they've built is not very
+          good. Your project manager a code that can be entered into the game to
+          increase the AI's chances of beating the game. You are given the code
+          and a virtual controller.
+        </p>
+        <p>
+          Create a function to add to the AI that accepts <code>code</code> and
+          <code>controller</code>.
+        </p>
+        <p>
+          <code>code</code> is given as an object that contains a sequence of
+          strings accessed through a <code>next</code>, <code>last</code>, and
+          <code>curr</code>. <code>next</code> changes the current item of the
+          sequence to the next. <code>last</code> changes the current item of
+          the sequence to the last. <code>next</code> and <code>last</code>
+          return the current item on success and undefined on fail.
+          <code>curr</code> returns the current item in the sequence.
+        </p>
+        <p>
+          <code>controller</code> accepts a string. When it recives the correct
+          string for a sequence and is ready to receive another string in
+          the sequence TODO! THIS IS NOT FINISHED!
+        </p>
+        <p>Note: The AI does not have access to for or while loops.</p>
       </td>
     </tr>
     <tr>
       <th>Recursion 2</th>
       <td>
-        The neckbeards in archival found a puzzle box and want to see what it does.
-        They've hooked it up to the mainframe and provided a JavaScript interface. They
-        would like you to remotely open it, not that they think puzzle boxes can be
-        dangerous.
-
-        There are two things you can do to the puzzle box: click it and twist it. For
-        each time it is clicked it can be twisted. To solve the puzzle box it must be
-        clicked until it won't click anymore. Then it must be twisted for each time it
-        was clicked.
-
-        `puzzleBox` has a function `click` that, when called, returns a function value or
-        `undefined` when it is out of functions. The returned function values can be called
-        to twist `puzzleBox`.
-
-        To solve `puzzleBox`, you must call the function values `click` returns in reverse
-        order. To do this call `click` until it returns `undefined`. Then call each
-        function value `click` returned.
-
-        We'll use a recursive function that calls `puzzleBox.click` and stores its
-        returned function value. If `puzzleBox.click` returns `undefined` instead of
-        a function value the function will just end. Otherwise, call the recursive function
-        again with `puzzleBox` as a parameter then call `puzzleBox.click`'s returned
-        function value.
+        <p>
+          The neckbeards in archival found a puzzle box and want to see what it
+          does. They've hooked it up to the mainframe and provided a JavaScript
+          interface. They would like you to remotely open it, not that they
+          think puzzle boxes can be dangerous.
+        </p>
+        <p>
+          There are two things you can do to the puzzle box: click it and twist
+          it. For each time it is clicked it can be twisted. To solve the puzzle
+          box it must be clicked until it won't click anymore. Then it must be
+          twisted for each time it was clicked.
+        </p>
+        <p>
+          <code>puzzleBox</code> has a function <code>click</code> that, when
+          called, returns a function value or <code>undefined</code> when it is
+          out of functions. The returned function values can be called to twist
+          <code>puzzleBox</code>.
+        </p>
+        <p>
+          To solve <code>puzzleBox<code>, you must call the function values
+          <code>click<code> returns in reverse order. To do this call
+          <code>click<code> until it returns <code>undefined<code>. Then call
+          each function value <code>click<code> returned.
+        </p>
+        <p>
+          We'll use a recursive function that calls <code>puzzleBox.click<code>
+          and stores its returned function value. If <code>puzzleBox.click<code>
+          returns <code>undefined<code> instead of a function value the function
+          will just end. Otherwise, call the recursive function again with
+          <code>puzzleBox<code> as a parameter then call
+          <code>puzzleBox.click<code>'s returned function value.
+        </p>
       </td>
     </tr>
   </tbody>
@@ -682,7 +700,8 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
     <tr>
       <th>Growing 1</th>
       <td>
-        Reduce the code in `Exer.growing1` by placing repetitive code into a new reusable function.
+        Reduce the code in `Exer.growing1` by placing repetitive code into a new
+        reusable function.
       </td>
     </tr>
   </tbody>
@@ -709,13 +728,15 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
     <tr>
       <th>Side Effects 1</th>
       <td>
-        Call each function defined in `Exer.sideEffectsExample` that is a pure function.
+        Call each function defined in `Exer.sideEffectsExample` that is a
+        pure function.
       </td>
     </tr>
     <tr>
       <th>Side Effects 2</th>
       <td>
-        Call each function defined in `Exer.sideEffectsExample` that is not a pure function.
+        Call each function defined in `Exer.sideEffectsExample` that is not a
+        pure function.
       </td>
     </tr>
   </tbody>
