@@ -10,7 +10,7 @@ describe( 'Recursion exercise', function () {
       expect( this.functionDefinition ).toMatch( /Exer.isEven\(.+\)/mg );
     } );
     it( 'should accept one parameter', function () {
-      expect( this.functionDefinition ).toMatch( /^\s*function\s*\(\s*\w+.*\s*\)\s*\{$/mg );
+      expect( Exer.isEven.length ).toBe( 1 );
     } );
     it( 'should return true given an even number', function () {
       expect( Exer.isEven( 22 ) ).toBe( true );
@@ -33,6 +33,7 @@ describe( 'Recursion exercise', function () {
       this.functionDefinition = Exer.isFooDivByBar.toString();
     } );
     it( 'should accept two parameters named `foo` and `bar`', function () {
+      expect( Exer.isFooDivByBar.length ).toBe( 2 );
       expect( this.functionDefinition ).toMatch( /^\s*function\s*\(\s*foo,\s*bar\s*\)\s*\{$/mg );
     } );
     it( 'should be recursive', function () {
@@ -53,8 +54,7 @@ describe( 'Recursion exercise', function () {
   } );
   describe( 'declares `isDivisibleBy`, a function that', function () {
     it( 'should accept one parameter', function () {
-      this.functionDefinition = Exer.isDivisibleBy.toString();
-      expect( this.functionDefinition ).toMatch( /^\s*function\s*\(\s*\w+.*\s*\)\s*\{$/mg );
+      expect( Exer.isDivisibleBy.length ).toBe( 1 );
     } );
     it( 'should return a function', function () {
       expect( typeof Exer.isDivisibleBy(2) ).toBe( 'function' );
