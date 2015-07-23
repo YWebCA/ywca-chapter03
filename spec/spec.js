@@ -332,7 +332,7 @@ describe( "Functions as Values exercises", function () {
       this.result = Exer.values1(this.volume, Exer.spaceCubeDetector);
     } );
     it( "given spaceCubeDetector and volume should assign spaceCubeDetector to volume", function () {
-      expect( Exer.values1.toString() ).toMatch(/volume\s+=\s+spaceCubeDetector/m);
+      expect( Exer.values1.toString() ).toMatch(/volume\s*=\s*spaceCubeDetector/m);
     } );
     it("given spaceCubeDetector and volume should call volume once after assignement", function () {
       expect( Exer.values1.toString() ).toMatch(/volume\([^\(\),]*,[^\(\),]*,[^\(\),]*\);/);
@@ -351,7 +351,7 @@ describe( "Functions as Values exercises", function () {
       this.result = Exer.values2(null);
     });
     it("given volume should assign a new function to volume", function() {
-      expect( Exer.values2.toString() ).toMatch(/volume\s+=\s+function/m);
+      expect( Exer.values2.toString() ).toMatch(/volume\s*=\s*function/m);
     });
     it("given volume should return the new volume", function() {
       expect( typeof this.result ).toBe("function");
