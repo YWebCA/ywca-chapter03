@@ -426,7 +426,14 @@ Exer.closures1 = function ( spaceCubeDetector ) {  //
 *******************************************************************************/
 
 /*****************************    Recursion 1    ******************************/
+// Create a recursive function that accepts a `code` and `contoller`. It should
+// send the current keypress in the sequence contained in `code` to
+// `controller`. After sending the keypress, check if there is another item in
+// the sequence by advancing `code`. If there is another keypress, pass the
+// altered `code` and `controller` to a new call of your recursive function.
 //
+// Finish the exercise by calling your recursive function with the `code` and
+// and `controller` given.
 //================================================//
 Exer.recursion1 = function ( code, puzzleBox ) {  //
 //================================================//
