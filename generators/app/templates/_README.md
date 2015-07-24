@@ -614,36 +614,49 @@ These exercises correspond to [this section of the text](http://eloquentjavascri
         <p>
           The AI department is developing a system to beat the game Contra for
           the Nintendo Entertainment System. The AI they've built is not very
-          good. Your project manager a code that can be entered into the game to
-          increase the AI's chances of beating the game. You are given the code
-          and a virtual controller.
+          good. Your project manager found a code that can be entered into the
+          game to increase the AI’s chances of beating the game. You are given
+          the Konami <strong>code</strong> and a virtual
+          <strong>controller</strong> to enter the code into.
         </p>
         <p>
-          Create a function to add to the AI that accepts <code>code</code> and
-          <code>controller</code>.
+          <code>code</code> is an object that contains a sequence of keypresses, stored as strings. <code>code</code> remembers where it is in the sequence, so the keypresses are accessed through the functions <code>next()</code>, <code>prev()</code>, and <code>curr()</code>.
+        </p>
+        <ul>
+          <li>
+            <code>code.next()</code> changes the current keypress of the
+            sequence to the next one. It returns the next keypress if there is
+            one, or <code>undefined</code> if there are no more.
+          </li>
+          <li>
+            <code>code.prev()</code> changes the current keypress of the
+            sequence to the previous one. It returns the previous keypress if
+            there is one, or <code>undefined</code> if there are none to go
+            back to.
+          </li>
+          <li>
+            <code>code.curr()</code> returns the current keypress in
+            the sequence.
+          </li>
+        </ul>
+        <p>
+          <code>controller</code> is a function that accepts a string. When it
+          recives the correct string for a sequence and is ready to receive
+          another string in the sequence, it will return <code>true</code>.
+          Otherwise, it returns <code>false</code>.
         </p>
         <p>
-          <code>code</code> is given as an object that contains a sequence of
-          strings accessed through a <code>next</code>, <code>last</code>, and
-          <code>curr</code>. <code>next</code> changes the current item of the
-          sequence to the next. <code>last</code> changes the current item of
-          the sequence to the last. <code>next</code> and <code>last</code>
-          return the current item on success and undefined on fail.
-          <code>curr</code> returns the current item in the sequence.
+          Create a recursive function that accepts a <code>code</code> and
+          <code>contoller</code>. It should send the current keypress in the
+          sequence contained in <code>code</code> to <code>controller</code>.
+          After sending the keypress, check if there is another item in the
+          sequence by advancing <code>code</code>. If there is another keypress,
+          pass the altered <code>code</code> and <code>controller</code> to a
+          new call of your recursive function.
         </p>
         <p>
-          <code>controller</code> accepts a string. When it recives the correct
-          string for a sequence and is ready to receive another string in the
-          sequence it will return <code>true</code> it will otherwise return
-          <code>false</code>.
-        </p>
-        <p>
-          Create a recursive function that accepts a code and contoller. It
-          should send the current code item in the sequence to controller. After
-          sending the item, check if there is another item, and if move code to
-          the next item of the sequence and pass the code and controller to a
-          new call of your recursive function. Finish the exercise by calling
-          your new function with code and controller.
+          Finish the exercise by calling your recursive function with the
+          <code>code</code> and and <code>controller</code> given.
         </p>
         <p>Note: The AI does not have access to for or while loops.</p>
       </td>
